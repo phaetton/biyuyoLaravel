@@ -13,15 +13,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+//categorias
 
-
-Route::get('/categorias', function () {
-    return view('listado de categorias');
+Route::get('categorias', function () {
+    //consulta a la base de datos
+    $posts = [
+        ['Id_Categoria' => 1, 'Nombre' => 'comida', 'Descripcion' => 'Venta de comida'],
+        ['Id_Categoria' => 2, 'Nombre' => 'veterinaria', 'Descripcion' => 'cuidado animal'],
+    ];
+    return view('categorias', ['posts' => $posts]);
 });
 
+Route::get('categorias/{id}', function ($id) {
+    // consulta a base de datos
+    $post = $id;
+    return view('categorias', ['post' => $post]);
+});
+
+//negocios
 
 Route::get('negocios', function () {
     return view('listado de negocios');
@@ -30,6 +42,7 @@ Route::get('negocios', function () {
 
 Route::get('negocio/{id}', function ($id) {
     // consulta a base de datos
+    $posts = $id;
     return view('negocio con id');
 });
 
