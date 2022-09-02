@@ -16,8 +16,8 @@ class PageController extends Controller
     {
         //consulta a la base de datos
         $posts = [
-            ['Id_Categoria' => 1, 'Nombre' => 'comida', 'Descripcion' => 'Venta de comida', 'slug' => "food"],
-            ['Id_Categoria' => 2, 'Nombre' => 'veterinaria', 'Descripcion' => 'cuidado animal', 'slug' => "vet"],
+            ['Id_Categoria' => 1, 'nombre' => 'comida', 'descripcion' => 'Venta de comida', 'slug' => "food"],
+            ['Id_Categoria' => 2, 'nombre' => 'veterinaria', 'descripcion' => 'cuidado animal', 'slug' => "vet"],
         ];
         return view('categorias', ['posts' => $posts]);
     }
@@ -34,8 +34,8 @@ class PageController extends Controller
     {
         //consulta a la base de datos
         $posts = [
-            ['Id_Negocio' => 1, 'Nombre' => 'Comedor Rosita', 'Descripcion' => 'Venta de comida en su propio local', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
-            ['Id_Negocio' => 2, 'Nombre' => 'Pizza a domicilio', 'Descripcion' => 'Venta de comida a domicilio', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
+            ['Id_Negocio' => 1, 'nombre' => 'Comedor Rosita', 'descripcion' => 'Venta de comida en su propio local', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
+            ['Id_Negocio' => 2, 'nombre' => 'Pizza a domicilio', 'descripcion' => 'Venta de comida a domicilio', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
         ];
         return view('negocios', ['posts' => $posts]);
     }
