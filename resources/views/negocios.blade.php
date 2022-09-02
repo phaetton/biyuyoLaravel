@@ -1,6 +1,5 @@
 @extends('template')
 
 @section('content')
-<h1>Detalle de Categoria</h1>
-{{$post}}
+    <h1>Listado de negocios</h1>
 @endsection
