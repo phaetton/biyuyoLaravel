@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,9 +19,9 @@ class TiponegociosFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $nombre = $this->faker->sentence(),
-            'descripcion' => $this->faker->text(2200),
-            'slug' => Str::slug($nombre),
+            'nombre'        => $nombre = $this->faker->sentence(),
+            'descripcion'   => $this->faker->text(2200),
+            'slug'          => Str::slug($nombre),
         ];
     }
 }

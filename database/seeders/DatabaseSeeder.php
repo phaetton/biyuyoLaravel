@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // cantidad de elementos falsos a crearse según el modelo
          \App\Models\User::factory()->create();
          \App\Models\Categorias::factory(80)->create();
          \App\Models\negocios::factory(80)->create();

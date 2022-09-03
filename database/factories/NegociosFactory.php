@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,12 +19,12 @@ class NegociosFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $nombre = $this->faker->sentence(),
-            'descripcion' => $this->faker->text(2200),
-            'slug' => Str::slug($nombre),
-            'categoria'=>$this->faker->word(),
-            'tiponegocio'=>$this->faker->word(),
-            'active'=>fake()->boolean(),
+            'nombre'        => $nombre = $this->faker->sentence(),
+            'descripcion'   => $this->faker->text(2200),
+            'slug'          => Str::slug($nombre),
+            'categoria'     => $this->faker->word(),
+            'tiponegocio'   => $this->faker->word(),
+            'active'        => fake()->boolean(),
         ];
     }
 }
