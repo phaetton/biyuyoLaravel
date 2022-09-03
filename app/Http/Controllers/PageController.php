@@ -15,18 +15,18 @@ class PageController extends Controller
     public function categorias()
     {
         //consulta a la base de datos
-        $posts = [
+        $pcategorias = [
             ['Id_Categoria' => 1, 'nombre' => 'comida', 'descripcion' => 'Venta de comida', 'slug' => "food"],
             ['Id_Categoria' => 2, 'nombre' => 'veterinaria', 'descripcion' => 'cuidado animal', 'slug' => "vet"],
         ];
-        return view('categorias', ['posts' => $posts]);
+        return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
     public function categoria($slug)
     {
         // consulta a base de datos
-        $post = $slug;
-        return view('categoria', ['post' => $post]);
+        $pcategoria = $slug;
+        return view('categoria', ['pcategoria' => $pcategoria]);
     }
 
     //negocios
