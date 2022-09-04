@@ -16,7 +16,8 @@ class PageController extends Controller
     public function categorias()
     {
         //consulta a la base de datos
-        $pcategorias =Categorias::get();
+        // $pcategorias =Categorias::get();
+        $pcategorias =Categorias::latest()->paginate();
         return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
