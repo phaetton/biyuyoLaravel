@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorias;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -15,17 +16,12 @@ class PageController extends Controller
     public function categorias()
     {
         //consulta a la base de datos
-        $pcategorias = [
-            ['Id_Categoria' => 1, 'nombre' => 'comida', 'descripcion' => 'Venta de comida', 'slug' => "food"],
-            ['Id_Categoria' => 2, 'nombre' => 'veterinaria', 'descripcion' => 'cuidado animal', 'slug' => "vet"],
-        ];
+        $pcategorias =Categorias::get();
         return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
-    public function categoria($slug)
+    public function categoria(Categorias $pcategoria)
     {
-        // consulta a base de datos
-        $pcategoria = $slug;
         return view('categoria', ['pcategoria' => $pcategoria]);
     }
 
