@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('content')
+<h1>Detalle de la categoria</h1>
 <h1>{{$pcategoria->nombre}}</h1>
 <p>id: {{$pcategoria->id}}</p>
 <p>descripcion: {{$pcategoria->descripcion}}</p>

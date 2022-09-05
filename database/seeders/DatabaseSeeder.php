@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
     {
         // cantidad de elementos falsos a crearse según el modelo
          \App\Models\User::factory()->create();
-         \App\Models\Categorias::factory(80)->create();
-         \App\Models\negocios::factory(80)->create();
-         \App\Models\clientes::factory(20)->create();
+         \App\Models\Categorias::factory(40)->create();
+         \App\Models\negocios::factory(300)->create();
+         \App\Models\clientes::factory(50)->create();
          \App\Models\tiponegocios::factory(10)->create();
 
 

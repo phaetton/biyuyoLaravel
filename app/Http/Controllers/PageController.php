@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorias;
+use App\Models\clientes;
+use App\Models\negocios;
+use App\Models\tiponegocios;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -29,60 +33,51 @@ class PageController extends Controller
     //negocios
     public function negocios()
     {
-        //consulta a la base de datos
-        $posts = [
-            ['Id_Negocio' => 1, 'nombre' => 'Comedor Rosita', 'descripcion' => 'Venta de comida en su propio local', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
-            ['Id_Negocio' => 2, 'nombre' => 'Pizza a domicilio', 'descripcion' => 'Venta de comida a domicilio', 'Id_Categoria' => 1, 'NombreCategoria' => 'comida', 'Id_TipoNegocio' => 2, 'NombreTipoNegocio' => 'Productos', 'Activo' => true],
-        ];
-        return view('negocios', ['posts' => $posts]);
+        $pnegocios =negocios::latest()->paginate();
+        return view('negocios', ['pnegocios' => $pnegocios]);
     }
 
-    public function negocio($id)
+    public function negocio(negocios $pnegocio)
     {
-        // consulta a base de datos
-        $post = $id;
-        return view('negocio', ['post' => $post]);
+        return view('negocio', ['pnegocio' => $pnegocio]);
     }
 
 
     //tipo negocios
     public function tiponegocios()
     {
-        return view('listado de tipos de negocios');
+        $ptiponegocios =tiponegocios::latest()->paginate();
+        return view('tiponegocios', ['ptiponegocios' => $ptiponegocios]);
     }
 
-    public function tiponegocio($id)
+    public function tiponegocio(tiponegocios $ptiponegocio)
     {
-        // consulta a base de datos
-        $post = $id;
-        return view('tiponegocio', ['post' => $post]);
+        return view('tiponegocio', ['ptiponegocio' => $ptiponegocio]);
     }
 
 
     //usuarios
     public function usuarios()
     {
-        return view('listado de usuarios');
+        $pusuarios =User::latest()->paginate();
+        return view('usuarios', ['pusuarios' => $pusuarios]);
     }
 
-    public function usuario($id)
+    public function usuario(User $pusuario)
     {
-        // consulta a base de datos
-        $post = $id;
-        return view('usuarios', ['post' => $post]);
+        return view('usuario', ['pusuario' => $pusuario]);
     }
 
 
     //clientes
     public function clientes()
     {
-        return view('listado de clientes');
+        $pclientes =clientes::latest()->paginate();
+        return view('clientes', ['pclientes' => $pclientes]);
     }
 
-    public function cliente($id)
+    public function cliente(clientes $pcliente)
     {
-        // consulta a base de datos
-        $post = $id;
-        return view('cliente', ['post' => $post]);
+        return view('cliente', ['pcliente' => $pcliente]);
     }
 }

@@ -46,4 +46,6 @@ Route::controller(PageController::class)->group(function () {
     //clientes
     Route::get('clientes',                          'clientes')->name('clientes');
     Route::get('cliente/{pcliente:id}',             'cliente')->name('cliente');
+
+    
 });
