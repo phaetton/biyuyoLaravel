@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\NegociosController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TiponegociosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('categorias/buscar', function (Request $request) {
@@ -52,6 +56,10 @@ Route::controller(PageController::class)->group(function () {
 
 
 
+Route::resource(('categorias'),CategoriasController::class)->except(['show']);
+Route::resource(('clientes'),ClientesController::class)->except(['show']);
+Route::resource(('negocios'),NegociosController::class)->except(['show']);
+Route::resource(('tiponegocios'),TiponegociosController::class)->except(['show']);
 
 
 Route::get('/dashboard', function () {

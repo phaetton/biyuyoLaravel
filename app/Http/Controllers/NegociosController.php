@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class NegociosController extends Controller
 {
-    //
+
+    public function index()
+    {
+        return view('negocios.index');
+    }
 }
