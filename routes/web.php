@@ -24,27 +24,26 @@ Route::get('clientes/buscar', function (Request $request) {
     return $request->all();
 });
 
-Route::controller(PageController::class)->group(function(){
+Route::controller(PageController::class)->group(function () {
     Route::get('/',                 'home')->name('home');
 
     //categorias
-    Route::get('categorias',        'categorias')->name('categorias');
-    Route::get('categoria/{pcategoria:slug}',  'categoria')->name('categoria');
-   
+    Route::get('categorias',                        'categorias')->name('categorias');
+    Route::get('categoria/{pcategoria:slug}',       'categoria')->name('categoria');
+
     //negocios
-    Route::get('negocios',          'negocios')->name('negocios');
-    Route::get('negocio/{id}',      'negocio')->name('negocio');
-    
+    Route::get('negocios',                          'negocios')->name('negocios');
+    Route::get('negocio/{pnegocio:slug}',           'negocio')->name('negocio');
+
     //tipo negocios
-    Route::get('tiponegocios',      'tiponegocios')->name('tiponegocios');
-    Route::get('tiponegocio/{id}',  'tiponegocio')->name('tiponegocio');
-    
+    Route::get('tiponegocios',                      'tiponegocios')->name('tiponegocios');
+    Route::get('tiponegocio/{ptiponegocio:slug}',   'tiponegocio')->name('tiponegocio');
+
     //usuarios
-    Route::get('usuarios',          'usuarios')->name('usuarios');
-    Route::get('usuario/{id}',      'usuario')->name('usuario');
-    
+    Route::get('usuarios',                          'usuarios')->name('usuarios');
+    Route::get('usuario/{pusuario:id}',             'usuario')->name('usuario');
+
     //clientes
-    Route::get('clientes',          'clientes')->name('clientes');
-    Route::get('cliente/{id}',      'cliente')->name('cliente');
-  
+    Route::get('clientes',                          'clientes')->name('clientes');
+    Route::get('cliente/{pcliente:id}',             'cliente')->name('cliente');
 });
