@@ -19,12 +19,14 @@ class NegociosFactory extends Factory
     public function definition()
     {
         return [
-            'nombre'        => $nombre = $this->faker->sentence(),
-            'descripcion'   => $this->faker->text(2200),
-            'slug'          => Str::slug($nombre),
-            'categoria'     => $this->faker->word(),
-            'tiponegocio'   => $this->faker->word(),
-            'active'        => fake()->boolean(),
+            'nombre'            => $nombre = $this->faker->sentence(),
+            'descripcion'       => $this->faker->text(2200),
+            'slug'              => Str::slug($nombre),
+            'categoria_id'      => 1,
+            'tiponegocio_id'    => 1,
+            'cliente_id'        => 1,
+            'active'            => fake()->boolean(),
+            // 'categoria'     => $this->faker->word(),
         ];
     }
 }

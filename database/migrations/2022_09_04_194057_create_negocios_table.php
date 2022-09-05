@@ -18,8 +18,16 @@ return new class extends Migration
             $table->string('nombre');
             $table->longText('descripcion');
             $table->string('slug')->unique();
-            $table->string('categoria');
-            $table->string('tiponegocio');
+            
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+
+         $table->unsignedBigInteger('tiponegocio_id');
+             $table->foreign('tiponegocio_id')->references('id')->on('tiponegocios');
+
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
+
             $table->boolean('active');
             $table->timestamps();
         });
