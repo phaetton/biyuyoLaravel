@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\tiponegocios;
 use Illuminate\Http\Request;
+use illuminate\Support\Str;
 
 class TiponegociosController extends Controller
 {
     public function index()
     {
-        return view('tiponegocios.index',[
-            'tiponegocios'=>tiponegocios::latest()->paginate()
+        return view('tiponegocios.index', [
+            'tiponegocios' => tiponegocios::latest()->paginate()
         ]);
     }
 
@@ -24,9 +25,31 @@ class TiponegociosController extends Controller
     {
         return view('tiponegocios.create', ['tiponegocio' => $tiponegocio]);
     }
+    // crear
+    public function store(Request $request)
+    {
+        $tiponegocio = $request->user()->tiponegocios()->create([
+            'nombre' => $nombre = $request->nombre,
+            'slug' => Str::slug($nombre),
+            'descripcion' => $request->descripcion
+        ]);
+
+        return redirect()->route('tiponegocios.edit', $tiponegocio);
+    }
 
     public function edit(tiponegocios $tiponegocio)
     {
         return view('tiponegocios.edit', ['tiponegocio' => $tiponegocio]);
     }
+     // editar
+     public function update(Request $request, tiponegocios $tiponegocio)
+     {
+         $tiponegocio->update([
+             'nombre' => $nombre = $request->nombre,
+             'slug' => Str::slug($nombre),
+             'descripcion' => $request->descripcion,
+         ]);
+ 
+         return redirect()->route('tiponegocios.edit', $tiponegocio);
+     }
 }

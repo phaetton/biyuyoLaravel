@@ -45,4 +45,16 @@ class User extends Authenticatable
     public function categorias(){
         return $this->hasMany(Categorias::class);
     }
+
+    public function negocios(){
+        return $this->hasMany(negocios::class);
+    }
+
+    public function tiponegocios(){
+        return $this->hasMany(tiponegocios::class);
+    }
+
+    public function clientes(){
+        return $this->hasMany(clientes::class);
+    }
 }

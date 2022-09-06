@@ -7,14 +7,16 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Nombre
       </label>
-      <input value="{{$negocio->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
+      <input name="nombre" value="{{$negocio->nombre}}"
+       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3 |">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Slug
       </label>
-      <input value="{{$negocio->slug}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
+      <input name="slug" value="{{$negocio->slug}}" 
+      class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3 ">
@@ -23,7 +25,7 @@
           Activo
         </label>
         <label for="toggle" class="inline-flex relative items-center cursor-pointer">
-          <input type="checkbox" id="toggle" class="sr-only peer" checked>
+          <input name="active" type="checkbox" id="toggle" class="sr-only peer" checked>
           <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-slate-300 dark:peer-focus:ring-indigo-300 rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white dark:bg-slate-500 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-slate-400 peer-checked:bg-indigo-600"></div>
         </label>
         <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
@@ -37,7 +39,7 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
         Descripción
       </label>
-      <textarea class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{$negocio->descripcion}}</textarea>
+      <textarea name="descripcion" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{$negocio->descripcion}}</textarea>
       <!-- <p class="text-grey-dark text-xs italic" >Make it as long and as crazy as you'd like</p> -->
     </div>
   </div>
@@ -50,7 +52,7 @@
         Categoria
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+        <select name="categoria" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
           <option>New Mexico</option>
           <option>Missouri</option>
           <option>Texas</option>
@@ -68,7 +70,7 @@
         Tipo de Negocio
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+        <select name="tiponegocio" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
           <option>New Mexico</option>
           <option>Missouri</option>
           <option>Texas</option>
@@ -86,7 +88,7 @@
         Cliente
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+        <select name="cliente" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
           <option>New Mexico</option>
           <option>Missouri</option>
           <option>Texas</option>

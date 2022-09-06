@@ -9,24 +9,66 @@ class ClientesController extends Controller
 {
     public function index()
     {
-        return view('clientes.index',[
-            'clientes'=>clientes::latest()->paginate()
+        return view('clientes.index', [
+            'clientes' => clientes::latest()->paginate()
         ]);
     }
 
+    // eliminar
     public function destroy(clientes $cliente)
     {
         $cliente->delete();
         return back();
     }
 
+    // formulario crear
     public function create(clientes $cliente)
     {
         return view('clientes.create', ['cliente' => $cliente]);
     }
 
+    // crear
+    public function store(Request $request)
+    {
+        $cliente = $request->user()->Negocios()->create([
+            'nombre' => $nombre = $request->nombre,
+            'email' => $request->email,
+            'convencional' => "1",
+            'tigo' => "1",
+            'claro' => "1",
+            'facebook' => "1",
+            'whatsapp' => "1",
+            'instagram' => "1",
+            'telegram' => "1",
+            'twitter' => "1",
+        ]);
+
+        return redirect()->route('clientes.edit', $cliente);
+    }
+
+    //    formulario editar
     public function edit(clientes $cliente)
     {
         return view('clientes.edit', ['cliente' => $cliente]);
+    }
+
+    // editar
+    public function update(Request $request, clientes $cliente)
+    {
+        $cliente->update([
+            'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
+            'convencional' => $request->convencional,
+            'tigo' => $request->tigo,
+            'claro' => $request->claro,
+            'facebook' => $request->facebook,
+            'whatsapp' => $request->whatsapp,
+            'instagram' => $request->instagram,
+            'telegram' => $request->telegram,
+            'twitter' => $request->twitter,
+            'active' => '1',
+        ]);
+
+        return redirect()->route('clientes.edit', $cliente);
     }
 }

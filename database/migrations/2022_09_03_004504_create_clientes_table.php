@@ -18,8 +18,14 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('email')->unique();            
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('convencional');
+            $table->string('tigo');
+            $table->string('claro');
+            $table->string('facebook');
+            $table->string('whatsapp');
+            $table->string('instagram');
+            $table->string('telegram');
+            $table->string('twitter');
             $table->boolean('active');
             $table->timestamps();
         });

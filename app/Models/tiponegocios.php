@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class tiponegocios extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'slug',
+        'descripcion'
+    ];
+
+    public function user(){
+        return $this->BelongsTo(User::class);
+    }
 }

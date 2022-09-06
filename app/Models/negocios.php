@@ -9,8 +9,16 @@ class negocios extends Model
 {
     use HasFactory;
 
-   
-
+    protected $fillable = [
+        'nombre',
+        'slug',
+        'descripcion',
+        'categoria_id',
+        'tiponegocio_id',
+        'cliente_id',
+        'active',
+    ];
+ 
     public function categoria()
     {
     	return $this->belongsTo(Categorias::class);
@@ -26,5 +34,8 @@ class negocios extends Model
     	return $this->belongsTo(clientes::class);
     }
 
+    public function user(){
+        return $this->BelongsTo(User::class);
+    }
     
 }

@@ -6,14 +6,14 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Nombre
       </label>
-      <input value="{{$cliente->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Nombre">
+      <input name="nombre" value="{{$cliente->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Nombre">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
         Email
       </label>
-      <input value="{{$cliente->email}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Email">
+      <input name="email" value="{{$cliente->email}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Email">
     </div>
   </div>
   <div class="-mx-3 md:flex mb-6">

@@ -46,9 +46,9 @@ class CategoriasController extends Controller
     }
 
     // editar
-    public function update(Request $request,Categorias $categoria)
+    public function update(Request $request, Categorias $categoria)
     {
-        $categoria -> update([
+        $categoria->update([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion
