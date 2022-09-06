@@ -13,4 +13,13 @@ class CategoriasController extends Controller
             'categorias'=>Categorias::latest()->paginate()
         ]);
     }
+
+    public function destroy(Categorias $categoria)
+    {
+        $categoria->delete();
+        return back();
+    }
+
+    // create
+    // update
 }

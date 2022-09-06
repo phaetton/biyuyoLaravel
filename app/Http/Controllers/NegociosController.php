@@ -14,4 +14,10 @@ class NegociosController extends Controller
             'negocios'=>negocios::latest()->paginate()
         ]);
     }
+
+    public function destroy(negocios $negocio)
+    {
+        $negocio->delete();
+        return back();
+    }
 }

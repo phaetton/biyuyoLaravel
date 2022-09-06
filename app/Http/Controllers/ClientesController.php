@@ -13,4 +13,10 @@ class ClientesController extends Controller
             'clientes'=>clientes::latest()->paginate()
         ]);
     }
+
+    public function destroy(clientes $cliente)
+    {
+        $cliente->delete();
+        return back();
+    }
 }

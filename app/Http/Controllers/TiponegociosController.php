@@ -13,4 +13,10 @@ class TiponegociosController extends Controller
             'tiponegocios'=>tiponegocios::latest()->paginate()
         ]);
     }
+
+    public function destroy(tiponegocios $tiponegocio)
+    {
+        $tiponegocio->delete();
+        return back();
+    }
 }
