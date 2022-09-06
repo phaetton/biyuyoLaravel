@@ -9,8 +9,8 @@ class CategoriasController extends Controller
 {
     public function index()
     {
-        return view('categorias.index',[
-            'categorias'=>Categorias::latest()->paginate()
+        return view('categorias.index', [
+            'categorias' => Categorias::latest()->paginate()
         ]);
     }
 
@@ -20,6 +20,13 @@ class CategoriasController extends Controller
         return back();
     }
 
-    // create
-    // update
+    public function create()
+    {
+        return view('categorias.create');
+    }
+
+    public function edit(Categorias $categoria)
+    {
+        return view('categorias.edit', ['categoria' => $categoria]);
+    }
 }

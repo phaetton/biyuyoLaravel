@@ -17,7 +17,8 @@
                                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                         <th class="py-3 px-6 text-left">Id</th>
                                         <th class="py-3 px-6 text-left">Nombre</th>
-                                        <th class="py-3 px-6 text-left">Acciones</th>
+                                        <th class="py-3 px-6 text-left"></th>
+                                        <th class="py-3 px-6 text-left"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 text-sm font-light">
@@ -35,7 +36,9 @@
                                         </td>
 
                                         <td class="py-3 px-6 text-center">
-                                            <div class="flex item-center justify-center">
+                                                <a href="{{route('tiponegocios.edit',$tiponegocio)}}" class="text-indigo-600">Editar</a>
+                                        </td>
+                                        <td class="py-3 px-6 text-center">
                                                 <form action="{{route('tiponegocios.destroy',$tiponegocio)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -44,8 +47,6 @@
                                                     onclick="return confirm('¿Desea eliminar?')" 
                                                     class="bg-gray-800 text-white rounded px-4 py-2" />
                                                 </form>
-                                             
-                                            </div>
                                         </td>
                                     </tr>
                                     @empty

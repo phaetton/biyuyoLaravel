@@ -2,6 +2,8 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Listado de Clientes') }}
+            <a href="{{route('clientes.create')}}" 
+            class="text-xs bg-gray-800 text-white rounded px-2 py-1">Crear</a>
         </h2>
     </x-slot>
 
@@ -17,7 +19,8 @@
                                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                         <th class="py-3 px-6 text-left">Id</th>
                                         <th class="py-3 px-6 text-left">Nombre</th>
-                                        <th class="py-3 px-6 text-left">Acciones</th>
+                                        <th class="py-3 px-6 text-left"></th>
+                                        <th class="py-3 px-6 text-left"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 text-sm font-light">
@@ -35,7 +38,9 @@
                                         </td>
 
                                         <td class="py-3 px-6 text-center">
-                                            <div class="flex item-center justify-center">
+                                                <a href="{{route('clientes.edit',$cliente)}}" class="text-indigo-600">Editar</a>
+                                        </td>
+                                        <td class="py-3 px-6 text-center">
                                                 <form action="{{route('clientes.destroy',$cliente)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -44,8 +49,6 @@
                                                     onclick="return confirm('¿Desea eliminar?')" 
                                                     class="bg-gray-800 text-white rounded px-4 py-2" />
                                                 </form>
-                                             
-                                            </div>
                                         </td>
                                     </tr>
                                     @empty
