@@ -25,11 +25,12 @@ class CategoriasController extends Controller
     {
         
         $categoria=$request->user()->Categorias()->create([
-            'nombre'=>$nombre="juan3",
+            'nombre'=>$nombre=$request->nombre,
             'slug'=>Str::slug($nombre),
-            'descripcion'=>"el es juan3"
+            'descripcion'=>$request->descripcion
         ]);
-         return redirect()->route('categorias.edit', $categoria);
+
+        return redirect()->route('categorias.edit', $categoria);
     }
 
     public function create(Categorias $categoria)

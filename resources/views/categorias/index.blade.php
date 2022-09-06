@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
             {{ __('Listado de Categorias') }}
-            <a href="{{route('categorias.create')}}" 
+            <a href="{{ route('categorias.create') }}" 
             class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
 
         </h2>
@@ -38,7 +38,7 @@
                                         </td>
 
                                         <td class="py-3 px-6  flex gap-2 justify-end">
-                                            <a href="{{route('categorias.edit',$categoria)}}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a>
+                                            <a href="{{ route('categorias.edit',$categoria) }}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a>
 
                                             <form action="{{route('categorias.destroy',$categoria)}}" method="POST">
                                                 @csrf
