@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
             {{ __('Listado de Categorias') }}
             <a href="{{route('categorias.create')}}" 
-            class="text-xs bg-gray-800 text-white rounded px-2 py-1">Crear</a>
+            class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
 
         </h2>
     </x-slot>
@@ -19,8 +19,7 @@
                                 <thead>
                                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                         <th class="py-3 px-6 text-left">Id</th>
-                                        <th class="py-3 px-6 text-left">Categoria</th>
-                                        <th class="py-3 px-6 text-left"></th>
+                                        <th class="py-3 px-6 text-left">Nombre</th>
                                         <th class="py-3 px-6 text-left"></th>
                                     </tr>
                                 </thead>
@@ -38,18 +37,14 @@
                                             </div>
                                         </td>
 
-                                        <td class="py-3 px-6 text-center">
-                                                <a href="{{route('categorias.edit',$categoria)}}" class="text-indigo-600">Editar</a>
-                                        </td>
-                                        <td class="py-3 px-6 text-center">
-                                                <form action="{{route('categorias.destroy',$categoria)}}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <input type="submit" 
-                                                    value="Eliminar" 
-                                                    onclick="return confirm('¿Desea eliminar?')" 
-                                                    class="bg-gray-800 text-white rounded px-4 py-2" />
-                                                </form>
+                                        <td class="py-3 px-6  flex gap-2 justify-end">
+                                            <a href="{{route('categorias.edit',$categoria)}}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a>
+
+                                            <form action="{{route('categorias.destroy',$categoria)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10" />
+                                            </form>
                                         </td>
                                     </tr>
                                     @empty

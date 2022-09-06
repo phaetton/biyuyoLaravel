@@ -20,4 +20,14 @@ class NegociosController extends Controller
         $negocio->delete();
         return back();
     }
+   
+    public function create(negocios $negocio)
+    {
+        return view('negocios.create', ['negocio' => $negocio]);
+    }
+
+    public function edit(negocios $negocio)
+    {
+        return view('negocios.edit', ['negocio' => $negocio]);
+    }
 }

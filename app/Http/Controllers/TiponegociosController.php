@@ -19,4 +19,14 @@ class TiponegociosController extends Controller
         $tiponegocio->delete();
         return back();
     }
+
+    public function create(tiponegocios $tiponegocio)
+    {
+        return view('tiponegocios.create', ['tiponegocio' => $tiponegocio]);
+    }
+
+    public function edit(tiponegocios $tiponegocio)
+    {
+        return view('tiponegocios.edit', ['tiponegocio' => $tiponegocio]);
+    }
 }

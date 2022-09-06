@@ -19,4 +19,14 @@ class ClientesController extends Controller
         $cliente->delete();
         return back();
     }
+
+    public function create(clientes $cliente)
+    {
+        return view('clientes.create', ['cliente' => $cliente]);
+    }
+
+    public function edit(clientes $cliente)
+    {
+        return view('clientes.edit', ['cliente' => $cliente]);
+    }
 }

@@ -1,1 +1,113 @@
-Formulario
+@csrf
+@csrf
+<!-- component -->
+<div class=" rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+  <div class="-mx-3 md:flex mb-6 justify-between">
+    <div class="md:w-1/2 px-3 |">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
+        Nombre
+      </label>
+      <input value="{{$negocio->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
+      <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="md:w-1/2 px-3 |">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
+        Slug
+      </label>
+      <input value="{{$negocio->slug}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
+      <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="md:w-1/2 px-3 ">
+      <div class="flex gap-4 justify-center rounded-lg w-auto mt-6">
+        <label class=" uppercase tracking-wide text-grey-darker text-xs font-bold" for="grid-first-name">
+          Activo
+        </label>
+        <label for="toggle" class="inline-flex relative items-center cursor-pointer">
+          <input type="checkbox" id="toggle" class="sr-only peer" checked>
+          <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-slate-300 dark:peer-focus:ring-indigo-300 rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white dark:bg-slate-500 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-slate-400 peer-checked:bg-indigo-600"></div>
+        </label>
+        <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
+      </div>
+
+    </div>
+  </div>
+
+  <div class="-mx-3 md:flex mb-3">
+    <div class="md:w-full px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+        Descripción
+      </label>
+      <textarea class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{$negocio->descripcion}}</textarea>
+      <!-- <p class="text-grey-dark text-xs italic" >Make it as long and as crazy as you'd like</p> -->
+    </div>
+  </div>
+
+
+  <div class="-mx-3 md:flex mb-2">
+
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+        Categoria
+      </label>
+      <div class="relative">
+        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+          <option>New Mexico</option>
+          <option>Missouri</option>
+          <option>Texas</option>
+        </select>
+        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+        Tipo de Negocio
+      </label>
+      <div class="relative">
+        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+          <option>New Mexico</option>
+          <option>Missouri</option>
+          <option>Texas</option>
+        </select>
+        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+        Cliente
+      </label>
+      <div class="relative">
+        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+          <option>New Mexico</option>
+          <option>Missouri</option>
+          <option>Texas</option>
+        </select>
+        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="grid md:flex grid-cols-2 justify-end space-x-4 w-full mt-6">
+    <input type="submit" value="Guardar" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">
+
+    <a href="{{route('negocios.index')}}" class="px-4 py-2 rounded-lg text-white bg-red-800 hover:bg-red-900 font-bold  shadow-lg shadow-red-200 transition ease-in-out duration-200 translate-10">
+      Cancelar
+    </a>
+  </div>
+</div>

@@ -20,9 +20,10 @@ class CategoriasController extends Controller
         return back();
     }
 
-    public function create()
+    public function create(Categorias $categoria)
     {
-        return view('categorias.create');
+        return view('categorias.create', ['categoria' => $categoria]);
+
     }
 
     public function edit(Categorias $categoria)
