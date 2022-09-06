@@ -22,6 +22,7 @@ class TiponegociosFactory extends Factory
             'nombre'        => $nombre = $this->faker->sentence(),
             'descripcion'   => $this->faker->text(2200),
             'slug'          => Str::slug($nombre),
+            'user_id'       => 1,
         ];
     }
 }

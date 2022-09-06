@@ -40,9 +40,10 @@
          <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="{{route ('usuarios')}}">Usuarios</a></li>
          <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="{{route ('clientes')}}">Clientes</a></li>
          <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="{{route ('tiponegocios')}}">Tipo de Negocio</a></li>
-         <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="{{route ('negocios')}}">Negocios</a></li>
+        
          <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="#">Logout</a></li>
           @else
+          
           <li class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page"><a href="{{route ('login')}}">login</a></li>
         
           @endauth

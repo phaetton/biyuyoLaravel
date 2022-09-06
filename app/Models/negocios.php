@@ -9,6 +9,8 @@ class negocios extends Model
 {
     use HasFactory;
 
+   
+
     public function categoria()
     {
     	return $this->belongsTo(Categorias::class);
@@ -23,4 +25,6 @@ class negocios extends Model
     {
     	return $this->belongsTo(clientes::class);
     }
+
+    
 }

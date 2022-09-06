@@ -26,6 +26,7 @@ class NegociosFactory extends Factory
             'tiponegocio_id'    => 1,
             'cliente_id'        => 1,
             'active'            => fake()->boolean(),
+            'user_id'           => 1,
             // 'categoria'     => $this->faker->word(),
         ];
     }
