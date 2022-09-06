@@ -21,25 +21,39 @@ class CategoriasController extends Controller
         return back();
     }
 
-    public function store(Request $request)
-    {
-        
-        $categoria=$request->user()->Categorias()->create([
-            'nombre'=>$nombre=$request->nombre,
-            'slug'=>Str::slug($nombre),
-            'descripcion'=>$request->descripcion
-        ]);
-
-        return redirect()->route('categorias.edit', $categoria);
-    }
-
+    // formulario de crear
     public function create(Categorias $categoria)
     {
         return view('categorias.create', ['categoria' => $categoria]);
     }
 
+    // crear
+    public function store(Request $request)
+    {
+        $categoria = $request->user()->Categorias()->create([
+            'nombre' => $nombre = $request->nombre,
+            'slug' => Str::slug($nombre),
+            'descripcion' => $request->descripcion
+        ]);
+
+        return redirect()->route('categorias.edit', $categoria);
+    }
+
+    // formulario de editar
     public function edit(Categorias $categoria)
     {
         return view('categorias.edit', ['categoria' => $categoria]);
+    }
+
+    // editar
+    public function update(Request $request,Categorias $categoria)
+    {
+        $categoria -> update([
+            'nombre' => $nombre = $request->nombre,
+            'slug' => Str::slug($nombre),
+            'descripcion' => $request->descripcion
+        ]);
+
+        return redirect()->route('categorias.edit', $categoria);
     }
 }
