@@ -11,11 +11,15 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home()
+    public function home(Request $request)
     {
-        $pnegocios =negocios::latest()->paginate();
-        $pcategorias =Categorias::latest()->paginate();
-        $ptiponegocios =tiponegocios::latest()->paginate();
+        $search = $request->search;
+
+        $pnegocios = negocios::where('nombre', 'LIKE', "%{$search}%")
+            ->with('user')
+            ->latest()->paginate();
+        $pcategorias = Categorias::latest()->paginate();
+        $ptiponegocios = tiponegocios::latest()->paginate();
         return view('home', [
             'pnegocios' => $pnegocios,
             'pcategorias' => $pcategorias,
@@ -28,7 +32,7 @@ class PageController extends Controller
     {
         //consulta a la base de datos
         // $pcategorias =Categorias::get();
-        $pcategorias =Categorias::latest()->paginate();
+        $pcategorias = Categorias::latest()->paginate();
         return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
@@ -40,7 +44,7 @@ class PageController extends Controller
     //negocios
     public function negocios()
     {
-        $pnegocios =negocios::latest()->paginate();
+        $pnegocios = negocios::latest()->paginate();
         return view('negocios', ['pnegocios' => $pnegocios]);
     }
 
@@ -53,7 +57,7 @@ class PageController extends Controller
     //tipo negocios
     public function tiponegocios()
     {
-        $ptiponegocios =tiponegocios::latest()->paginate();
+        $ptiponegocios = tiponegocios::latest()->paginate();
         return view('tiponegocios', ['ptiponegocios' => $ptiponegocios]);
     }
 
@@ -66,7 +70,7 @@ class PageController extends Controller
     //usuarios
     public function usuarios()
     {
-        $pusuarios =User::latest()->paginate();
+        $pusuarios = User::latest()->paginate();
         return view('usuarios', ['pusuarios' => $pusuarios]);
     }
 
@@ -79,7 +83,7 @@ class PageController extends Controller
     //clientes
     public function clientes()
     {
-        $pclientes =clientes::latest()->paginate();
+        $pclientes = clientes::latest()->paginate();
         return view('clientes', ['pclientes' => $pclientes]);
     }
 

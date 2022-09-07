@@ -32,23 +32,18 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/',                 'home')->name('home');
 
     //categorias
-    Route::get('categorias',                        'categorias')->name('categorias');
     Route::get('categoria/{pcategoria:slug}',       'categoria')->name('categoria');
 
     //negocios
-    Route::get('negocios',                          'negocios')->name('negocios');
     Route::get('negocio/{pnegocio:slug}',           'negocio')->name('negocio');
 
     //tipo negocios
-    Route::get('tiponegocios',                      'tiponegocios')->name('tiponegocios');
     Route::get('tiponegocio/{ptiponegocio:slug}',   'tiponegocio')->name('tiponegocio');
 
     //usuarios
-    Route::get('usuarios',                          'usuarios')->name('usuarios');
     Route::get('usuario/{pusuario:id}',             'usuario')->name('usuario');
 
     //clientes
-    Route::get('clientes',                          'clientes')->name('clientes');
     Route::get('cliente/{pcliente:id}',             'cliente')->name('cliente');
 
     
@@ -56,14 +51,26 @@ Route::controller(PageController::class)->group(function () {
 
 
 
-Route::resource(('categorias'),CategoriasController::class)->except(['show']);
-Route::resource(('clientes'),ClientesController::class)->except(['show']);
-Route::resource(('negocios'),NegociosController::class)->except(['show']);
-Route::resource(('tiponegocios'),TiponegociosController::class)->except(['show']);
+// Route::resource(('categorias'),CategoriasController::class)->except(['show']);
+// Route::resource(('negocios'),NegociosController::class)->except(['show']);
+// Route::resource(('tiponegocios'),TiponegociosController::class)->except(['show']);
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::redirect('/clientes','clientes')->name('clientes');
+ Route::resource(('clientes'),ClientesController::class)->middleware(['auth'])->except(['show']);
+
+ Route::redirect('/negocios','negocios')->name('negocios');
+ Route::resource(('negocios'),NegociosController::class)->middleware(['auth'])->except(['show']);
+
+ Route::redirect('/tiponegocios','tiponegocios')->name('tiponegocios');
+ Route::resource(('tiponegocios'),TiponegociosController::class)->middleware(['auth'])->except(['show']);
+
+ Route::redirect('/categorias','categorias')->name('categorias');
+ Route::resource(('categorias'),CategoriasController::class)->middleware(['auth'])->except(['show']);
 
 require __DIR__.'/auth.php';

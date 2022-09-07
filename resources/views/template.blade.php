@@ -11,13 +11,13 @@
 </head>
 
 <body class="container-fluid mx-auto">
-  <header class="flex justify-between items-center py-4">
+  <header class="flex justify-between items-center py-2">
     <div class="flex items-center flex-grow gap-4">
       <a href="{{route ('home')}}">
         <img src="{{asset('images/logo.png')}}" class="h-12">
       </a>
-      <form action="">
-        <input type="text" placeholder="buscar">
+      <form action="{{route('home')}}" method="GET" class="flex-grow">
+        <input type="text" name="search" placeholder="buscar" value="{{request('search')}}" class="border border-gray-200 rounded py-2 px-4 w-1/2">
       </form>
 
     </div>
@@ -52,17 +52,6 @@
     </nav>
 
   </header>
-
-  <div class=" opacity-60 h-px mb-8" style="
-  background: linear-gradient(    to right,
-  rgba(200,200,0)0%,
-  rgba(200,200,1)30%,
-  rgba(200,200,2)70%,
-  rgba(200,200,0)100%,
-  )
-  ">
-
-  </div>
 
   @yield('content')
   <p class="py-16 ">
