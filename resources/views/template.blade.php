@@ -66,7 +66,7 @@
 
   @yield('content')
   <p class="py-16 ">
-  <img src="{{asset('images/logo.png')}}" class="h-12 mx-auto">
+    <img src="{{asset('images/logo.png')}}" class="h-12 mx-auto">
   </p>
 </body>
 

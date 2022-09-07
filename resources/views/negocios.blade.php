@@ -1,6 +1,4 @@
-@extends('template')
 
-@section('content')
 
 
 
@@ -49,5 +47,4 @@
         </div>
         {{$pnegocios->links()}}
     </div>
-
-    @endsection
+</section>
