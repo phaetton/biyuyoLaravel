@@ -30,6 +30,10 @@ class ClientesController extends Controller
     // crear
     public function store(Request $request)
     {
+          //validación
+          $request->validate([
+            'nombre' => 'required',            
+        ]);
 
         $cliente = $request->user()->Clientes()->create([
             'nombre'            =>  $request->nombre,
@@ -57,17 +61,23 @@ class ClientesController extends Controller
     // editar
     public function update(Request $request, clientes $cliente)
     {
+          //validación
+          $request->validate([
+            'nombre' => 'required',            
+        ]);
+
         $cliente->update([
-            'nombre'        => $request->nombre,
-            'convencional'  => $request->convencional,
-            'tigo'          => $request->tigo,
-            'claro'         => $request->claro,
-            'facebook'      => $request->facebook,
-            'whatsapp'      => $request->whatsapp,
-            'instagram'     => $request->instagram,
-            'telegram'      => $request->telegram,
-            'twitter'       => $request->twitter,
-            'active'        => '1',
+            'nombre'            =>  $request->nombre,
+            'email'             => $request->email,
+            'convencional'      => $request->convencional,
+            'tigo'              => $request->tigo,
+            'claro'             => $request->claro,
+            'facebook'          => $request->facebook,
+            'whatsapp'          => $request->whatsapp,
+            'instagram'         => $request->instagram,
+            'telegram'          => $request->telegram,
+            'twitter'           => $request->twitter,
+            'active'            => "1",
         ]);
 
         return redirect()->route('clientes.edit', $cliente);

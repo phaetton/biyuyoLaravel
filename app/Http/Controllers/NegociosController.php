@@ -30,6 +30,12 @@ class NegociosController extends Controller
      // crear
      public function store(Request $request)
      {
+            //validación
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
          $negocio = $request->user()->Negocios()->create([
              'nombre' => $nombre = $request->nombre,
              'slug' => Str::slug($nombre),
@@ -37,6 +43,7 @@ class NegociosController extends Controller
              'categoria_id'=>"1",
              'tiponegocio_id'=>"1",
              'cliente_id'=>"1",
+             'email' => $request->email,
              'convencional' => $request->convencional,
              'tigo' => $request->tigo,
              'claro' => $request->claro,
@@ -58,14 +65,20 @@ class NegociosController extends Controller
      // editar
      public function update(Request $request, negocios $negocio)
      {
-         $negocio->update([
+           //validación
+           $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
 
+         $negocio->update([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion,
             'categoria_id'=>"1",
             'tiponegocio_id'=>"1",
             'cliente_id'=>"1",
+            'email' => $request->email,
             'convencional' => $request->convencional,
             'tigo' => $request->tigo,
             'claro' => $request->claro,

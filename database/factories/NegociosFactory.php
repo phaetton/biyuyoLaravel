@@ -27,6 +27,7 @@ class NegociosFactory extends Factory
             'tiponegocio_id'    => 1,
             'cliente_id'        => 1,
             'active'            => fake()->boolean(),
+            'email'             => fake()->safeEmail(), 
             'convencional'      => fake()->phoneNumber(),
             'tigo'              => fake()->phoneNumber(),
             'claro'             => fake()->phoneNumber(),

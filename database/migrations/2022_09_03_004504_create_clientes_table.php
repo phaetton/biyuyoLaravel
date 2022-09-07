@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('convencional')->nullable();
             $table->string('tigo')->nullable();
             $table->string('claro')->nullable();

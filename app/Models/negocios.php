@@ -16,6 +16,7 @@ class negocios extends Model
         'categoria_id',
         'tiponegocio_id',
         'cliente_id',
+        'email',
         'convencional',
         'tigo',
         'claro',

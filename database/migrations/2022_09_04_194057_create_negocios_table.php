@@ -26,6 +26,7 @@ return new class extends Migration
             $table->foreign('tiponegocio_id')->references('id')->on('tiponegocios');
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->string('email')->nullable();
             $table->string('convencional')->nullable();
             $table->string('tigo')->nullable();
             $table->string('claro')->nullable();

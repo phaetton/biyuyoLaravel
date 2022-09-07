@@ -28,6 +28,12 @@ class TiponegociosController extends Controller
     // crear
     public function store(Request $request)
     {
+           //validación
+           $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+        
         $tiponegocio = $request->user()->tiponegocios()->create([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
@@ -44,6 +50,13 @@ class TiponegociosController extends Controller
      // editar
      public function update(Request $request, tiponegocios $tiponegocio)
      {
+        
+           //validación
+           $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
          $tiponegocio->update([
              'nombre' => $nombre = $request->nombre,
              'slug' => Str::slug($nombre),

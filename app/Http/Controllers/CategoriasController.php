@@ -21,6 +21,8 @@ class CategoriasController extends Controller
         return back();
     }
 
+
+
     // formulario de crear
     public function create(Categorias $categoria)
     {
@@ -30,6 +32,12 @@ class CategoriasController extends Controller
     // crear
     public function store(Request $request)
     {
+        //validación
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
         $categoria = $request->user()->Categorias()->create([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
@@ -48,6 +56,12 @@ class CategoriasController extends Controller
     // editar
     public function update(Request $request, Categorias $categoria)
     {
+        //validación
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
         $categoria->update([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),

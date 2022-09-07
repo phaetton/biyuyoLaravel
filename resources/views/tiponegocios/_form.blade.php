@@ -7,7 +7,8 @@
                 Nombre
             </label>
             <input name="nombre" value="{{$tiponegocio->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre" >
-            <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
+            <p class="text-red-600 text-xs italic">@error ('nombre') {{$message}} @enderror</p>
+
         </div>
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
@@ -24,7 +25,8 @@
                 Descripción
             </label>
             <textarea name="descripcion" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{$tiponegocio->descripcion}}</textarea>
-            <!-- <p class="text-grey-dark text-xs italic" >Make it as long and as crazy as you'd like</p> -->
+            <p class="text-red-600 text-xs italic">@error ('descripcion') {{$message}} @enderror</p>
+
         </div>
     </div>
 
