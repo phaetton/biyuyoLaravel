@@ -7,14 +7,14 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Nombre
       </label>
-      <input name="nombre" value="{{$negocio->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
+      <input name="nombre" value="{{old('nombre',$negocio->nombre)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
       <p class="text-red-600 text-xs italic">@error ('nombre') {{$message}} @enderror</p>
     </div>
     <div class="md:w-1/2 px-3 |">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Slug
       </label>
-      <input name="slug" value="{{$negocio->slug}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
+      <input name="slug" value="{{old('slug',$negocio->slug)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3 ">
@@ -37,11 +37,12 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
         Descripción
       </label>
-      <textarea name="descripcion" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{$negocio->descripcion}}</textarea>
+      <textarea name="descripcion" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{old('descripcion',$negocio->descripcion)}}</textarea>
       <p class="text-red-600 text-xs italic">@error ('descripcion') {{$message}} @enderror</p>
 
     </div>
   </div>
+
 
 
   <div class="-mx-3 md:flex mb-8">
@@ -52,9 +53,11 @@
       </label>
       <div class="relative">
         <select name="categoria" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+          @foreach($categorias as $categoria)
+          <option 
+          @if($negocio['categoria_id'] == $categoria['id']) selected @endif value="{{$categoria['id']}}">
+           {{$categoria['nombre']}}</option>
+          @endforeach
         </select>
         <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -67,13 +70,15 @@
 
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
-        Tipo de Negocio
+        tiponegocio
       </label>
       <div class="relative">
         <select name="tiponegocio" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+          @foreach($tiponegocios as $tiponegocio)
+          <option
+          @if($negocio['tiponegocio_id']== $tiponegocio['id']) selected @endif
+           value="{{$tiponegocio['id']}}">{{$tiponegocio['nombre']}}</option>
+          @endforeach
         </select>
         <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -82,18 +87,19 @@
         </div>
       </div>
       <p class="text-red-600 text-xs italic">@error ('tiponegocio') {{$message}} @enderror</p>
-
     </div>
 
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
-        Dueño
+        Mentorados
       </label>
       <div class="relative">
         <select name="cliente" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+          @foreach($clientes as $cliente)
+          <option
+          @if($negocio['cliente_id']==$cliente['id']) selected @endif
+           value="{{$cliente['id']}}">{{$cliente['nombre']}}</option>
+          @endforeach
         </select>
         <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -101,8 +107,9 @@
           </svg>
         </div>
       </div>
+      <p class="text-red-600 text-xs italic">@error ('cliente') {{$message}} @enderror</p>
     </div>
-    <p class="text-red-600 text-xs italic">@error ('cliente') {{$message}} @enderror</p>
+   
   </div>
 
   <div class="-mx-3 md:flex mb-6">
