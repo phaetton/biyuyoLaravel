@@ -7,16 +7,14 @@
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Nombre
       </label>
-      <input name="nombre" value="{{$negocio->nombre}}"
-       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
+      <input name="nombre" value="{{$negocio->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3 |">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
         Slug
       </label>
-      <input name="slug" value="{{$negocio->slug}}" 
-      class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
+      <input name="slug" value="{{$negocio->slug}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="md:w-1/2 px-3 ">
@@ -45,7 +43,7 @@
   </div>
 
 
-  <div class="-mx-3 md:flex mb-2">
+  <div class="-mx-3 md:flex mb-8">
 
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
@@ -85,10 +83,10 @@
 
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
-        Cliente
+        negocio
       </label>
       <div class="relative">
-        <select name="cliente" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+        <select name="negocio" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
           <option>New Mexico</option>
           <option>Missouri</option>
           <option>Texas</option>
@@ -102,7 +100,61 @@
     </div>
 
   </div>
+  
+  <div class="-mx-3 md:flex mb-6">
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        convencional
+      </label>
+      <input name="convencional" value="{{$negocio->convencional}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="convencional">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Celular tigo
+      </label>
+      <input name="tigo" value="{{$negocio->tigo}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="tigo">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Celular claro
+      </label>
+      <input name="claro" value="{{$negocio->claro}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="claro">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Facebook
+      </label>
+      <input name="facebook" value="{{$negocio->facebook}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="facebook">
+    </div>
+  </div>
 
+  <div class="-mx-3 md:flex mb-6">
+
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Whatsapp
+      </label>
+      <input name="whatsapp" value="{{$negocio->whatsapp}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="whatsapp">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Instagram
+      </label>
+      <input name="instagram" value="{{$negocio->instagram}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="instagram">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Telegram
+      </label>
+      <input name="telegram" value="{{$negocio->telegram}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="telegram">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Twitter
+      </label>
+      <input name="twitter" value="{{$negocio->twitter}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Twitter">
+    </div>
+  </div>
 
 
   <div class="grid md:flex grid-cols-2 justify-end space-x-4 w-full mt-6">
