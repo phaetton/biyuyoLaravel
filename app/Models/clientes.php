@@ -8,8 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class clientes extends Model
 {
     use HasFactory;
-    
-    public function user(){
+
+    protected $fillable = [
+        'nombre',
+        'email',
+        'convencional',
+        'tigo',
+        'claro',
+        'facebook',
+        'whatsapp',
+        'instagram',
+        'telegram',
+        'twitter',
+        'active',
+    ];
+
+    public function user()
+    {
         return $this->BelongsTo(User::class);
     }
 }

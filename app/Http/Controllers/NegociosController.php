@@ -37,6 +37,14 @@ class NegociosController extends Controller
              'categoria_id'=>"1",
              'tiponegocio_id'=>"1",
              'cliente_id'=>"1",
+             'convencional' => $request->convencional,
+             'tigo' => $request->tigo,
+             'claro' => $request->claro,
+             'facebook' => $request->facebook,
+             'whatsapp' => $request->whatsapp,
+             'instagram' => $request->instagram,
+             'telegram' => $request->telegram,
+             'twitter' => $request->twitter,
              'active'=>"1",
          ]);
  
@@ -51,9 +59,22 @@ class NegociosController extends Controller
      public function update(Request $request, negocios $negocio)
      {
          $negocio->update([
-             'nombre' => $nombre = $request->nombre,
-             'slug' => Str::slug($nombre),
-             'descripcion' => $request->descripcion
+
+            'nombre' => $nombre = $request->nombre,
+            'slug' => Str::slug($nombre),
+            'descripcion' => $request->descripcion,
+            'categoria_id'=>"1",
+            'tiponegocio_id'=>"1",
+            'cliente_id'=>"1",
+            'convencional' => $request->convencional,
+            'tigo' => $request->tigo,
+            'claro' => $request->claro,
+            'facebook' => $request->facebook,
+            'whatsapp' => $request->whatsapp,
+            'instagram' => $request->instagram,
+            'telegram' => $request->telegram,
+            'twitter' => $request->twitter,
+            'active' => '1',
          ]);
  
          return redirect()->route('negocios.edit', $negocio);

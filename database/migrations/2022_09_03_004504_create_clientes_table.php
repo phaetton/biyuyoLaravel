@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
-            $table->string('email')->unique();            
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email')->unique();
             $table->string('convencional');
             $table->string('tigo');
             $table->string('claro');

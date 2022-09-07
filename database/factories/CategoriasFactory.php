@@ -20,10 +20,10 @@ class CategoriasFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'       => 1,
-            'nombre'        => $nombre = $this->faker->sentence(),
-            'descripcion'   => $this->faker->text(2200),
-            'slug'          => Str::slug($nombre)
+            'user_id'           => 1,
+            'nombre'            => $nombre = $this->faker->sentence(),
+            'descripcion'       => $this->faker->text(2200),
+            'slug'              => Str::slug($nombre),           
         ];
     }
 }

@@ -18,9 +18,9 @@ class ClientesFactory extends Factory
     public function definition()
     {
         return [
+            'user_id'           => 1,
             'nombre'            => fake()->name(),
-            'email'             => fake()->safeEmail(),
-            'email_verified_at' => now(),
+            'email'             => fake()->safeEmail(),            
             'convencional'      => fake()->phoneNumber(),
             'tigo'              => fake()->phoneNumber(),
             'claro'             => fake()->phoneNumber(),

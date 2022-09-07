@@ -16,6 +16,14 @@ class negocios extends Model
         'categoria_id',
         'tiponegocio_id',
         'cliente_id',
+        'convencional',
+        'tigo',
+        'claro',
+        'facebook',
+        'whatsapp',
+        'instagram',
+        'telegram',
+        'twitter',
         'active',
     ];
  

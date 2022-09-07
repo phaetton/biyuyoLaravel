@@ -19,6 +19,7 @@ class NegociosFactory extends Factory
     public function definition()
     {
         return [
+            'user_id'           => 1,
             'nombre'            => $nombre = $this->faker->sentence(),
             'descripcion'       => $this->faker->text(2200),
             'slug'              => Str::slug($nombre),
@@ -26,8 +27,14 @@ class NegociosFactory extends Factory
             'tiponegocio_id'    => 1,
             'cliente_id'        => 1,
             'active'            => fake()->boolean(),
-            'user_id'           => 1,
-            // 'categoria'     => $this->faker->word(),
+            'convencional'      => fake()->phoneNumber(),
+            'tigo'              => fake()->phoneNumber(),
+            'claro'             => fake()->phoneNumber(),
+            'facebook'          => fake()->companyEmail(),
+            'whatsapp'          => fake()->companyEmail(),
+            'instagram'         => fake()->companyEmail(),
+            'telegram'          => fake()->companyEmail(),
+            'twitter'           => fake()->companyEmail(),            
         ];
     }
 }

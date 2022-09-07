@@ -33,14 +33,15 @@ class ClientesController extends Controller
         $cliente = $request->user()->Negocios()->create([
             'nombre' => $nombre = $request->nombre,
             'email' => $request->email,
-            'convencional' => "1",
-            'tigo' => "1",
-            'claro' => "1",
-            'facebook' => "1",
-            'whatsapp' => "1",
-            'instagram' => "1",
-            'telegram' => "1",
-            'twitter' => "1",
+            'convencional' => $request->convencional,
+            'tigo' => $request->tigo,
+            'claro' => $request->claro,
+            'facebook' => $request->facebook,
+            'whatsapp' => $request->whatsapp,
+            'instagram' => $request->instagram,
+            'telegram' => $request->telegram,
+            'twitter' => $request->twitter,
+            'active' => "1",
         ]);
 
         return redirect()->route('clientes.edit', $cliente);
