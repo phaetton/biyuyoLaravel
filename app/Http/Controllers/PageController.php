@@ -13,7 +13,14 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $pnegocios =negocios::latest()->paginate();
+        $pcategorias =Categorias::latest()->paginate();
+        $ptiponegocios =tiponegocios::latest()->paginate();
+        return view('home', [
+            'pnegocios' => $pnegocios,
+            'pcategorias' => $pcategorias,
+            'ptiponegocios' => $ptiponegocios
+        ]);
     }
 
     //categorias
