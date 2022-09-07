@@ -9,6 +9,7 @@
       <input name="nombre" value="{{$cliente->nombre}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Nombre">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
+
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
         Email
@@ -16,13 +17,58 @@
       <input name="email" value="{{$cliente->email}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Email">
     </div>
   </div>
+
   <div class="-mx-3 md:flex mb-6">
-    <div class="md:w-full px-3">
-      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
-        Password
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        convencional
       </label>
-      <input value="{{$cliente->password}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="password" placeholder="******************">
-      <!-- <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p> -->
+      <input name="convencional" value="{{$cliente->convencional}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="convencional">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Celular tigo
+      </label>
+      <input name="tigo" value="{{$cliente->tigo}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="tigo">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Celular claro
+      </label>
+      <input name="claro" value="{{$cliente->claro}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="claro">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Facebook
+      </label>
+      <input name="facebook" value="{{$cliente->facebook}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="facebook">
+    </div>
+  </div>
+  <div class="-mx-3 md:flex mb-6">
+   
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Whatsapp
+      </label>
+      <input name="whatsapp" value="{{$cliente->whatsapp}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="whatsapp">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Instagram
+      </label>
+      <input name="instagram" value="{{$cliente->instagram}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="instagram">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Telegram
+      </label>
+      <input name="telegram" value="{{$cliente->telegram}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="telegram">
+    </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Twitter
+      </label>
+      <input name="twitter" value="{{$cliente->twitter}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Twitter">
     </div>
   </div>
   <div class="grid md:flex grid-cols-2 justify-end space-x-4 w-full mt-6">

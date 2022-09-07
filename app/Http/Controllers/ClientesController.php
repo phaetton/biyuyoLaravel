@@ -30,18 +30,19 @@ class ClientesController extends Controller
     // crear
     public function store(Request $request)
     {
-        $cliente = $request->user()->Negocios()->create([
-            'nombre' => $nombre = $request->nombre,
-            'email' => $request->email,
-            'convencional' => $request->convencional,
-            'tigo' => $request->tigo,
-            'claro' => $request->claro,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-            'instagram' => $request->instagram,
-            'telegram' => $request->telegram,
-            'twitter' => $request->twitter,
-            'active' => "1",
+
+        $cliente = $request->user()->Clientes()->create([
+            'nombre'            =>  $request->nombre,
+            'email'             => $request->email,
+            'convencional'      => $request->convencional,
+            'tigo'              => $request->tigo,
+            'claro'             => $request->claro,
+            'facebook'          => $request->facebook,
+            'whatsapp'          => $request->whatsapp,
+            'instagram'         => $request->instagram,
+            'telegram'          => $request->telegram,
+            'twitter'           => $request->twitter,
+            'active'            => "1",
         ]);
 
         return redirect()->route('clientes.edit', $cliente);
@@ -57,17 +58,16 @@ class ClientesController extends Controller
     public function update(Request $request, clientes $cliente)
     {
         $cliente->update([
-            'nombre' => $request->nombre,
-            'descripcion' => $request->descripcion,
-            'convencional' => $request->convencional,
-            'tigo' => $request->tigo,
-            'claro' => $request->claro,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-            'instagram' => $request->instagram,
-            'telegram' => $request->telegram,
-            'twitter' => $request->twitter,
-            'active' => '1',
+            'nombre'        => $request->nombre,
+            'convencional'  => $request->convencional,
+            'tigo'          => $request->tigo,
+            'claro'         => $request->claro,
+            'facebook'      => $request->facebook,
+            'whatsapp'      => $request->whatsapp,
+            'instagram'     => $request->instagram,
+            'telegram'      => $request->telegram,
+            'twitter'       => $request->twitter,
+            'active'        => '1',
         ]);
 
         return redirect()->route('clientes.edit', $cliente);

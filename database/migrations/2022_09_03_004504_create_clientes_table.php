@@ -19,15 +19,15 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
             $table->string('email')->unique();
-            $table->string('convencional');
-            $table->string('tigo');
-            $table->string('claro');
-            $table->string('facebook');
-            $table->string('whatsapp');
-            $table->string('instagram');
-            $table->string('telegram');
-            $table->string('twitter');
-            $table->boolean('active');
+            $table->string('convencional')->nullable();
+            $table->string('tigo')->nullable();
+            $table->string('claro')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('telegram')->nullable();
+            $table->string('twitter')->nullable();
+            $table->boolean('active')->nullable();
             $table->timestamps();
         });
     }
