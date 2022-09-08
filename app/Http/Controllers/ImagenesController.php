@@ -32,19 +32,22 @@ class ImagenesController extends Controller
     public function store(Request $request)
     {
         //validación
-        $request->validate([
-            'imagen' => 'required',
+         $request->validate([
+             'imagen' => 'required|image|max:2048',
             'descripcion' => 'required',
             'negocio_id' => 'required',
-        ]);
+         ]);
 
-        $imagen = $request->user()->imagenes()->create([
-            'imagen' => $request->imagen,
-            'descripcion' => $request->descripcion,
-            'negocio_id' => $request->negocio,
-        ]);
 
-        return redirect()->route('imagenes.edit', $imagen);
+        return $request->file('imagen')->store('public/loadimagenes');
+
+
+        //         $imagen = $request->user()->imagenes()->create([
+        //             'imagen' => $request->imagen,
+        //             'descripcion' => $request->descripcion,
+        //             'negocio_id' => $request->negocio,
+        //         ]);
+
+        //         return redirect()->route('imagenes.edit', $imagen);
     }
-  
 }

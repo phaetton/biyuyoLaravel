@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categorias;
 use App\Models\clientes;
 use App\Models\negocios;
+use App\Models\imagenes;
 use App\Models\tiponegocios;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -91,4 +92,16 @@ class PageController extends Controller
     {
         return view('cliente', ['pcliente' => $pcliente]);
     }
+
+      //imagenes
+      public function imagenes()
+      {
+          $pimagenes = imagenes::latest()->paginate(16);
+          return view('imagenes', ['pimagenes' => $pimagenes]);
+      }
+  
+      public function imagen(imagenes $pimagen)
+      {
+          return view('imagen', ['pimagen' => $pimagen]);
+      }
 }
