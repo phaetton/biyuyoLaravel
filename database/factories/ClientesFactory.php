@@ -19,6 +19,7 @@ class ClientesFactory extends Factory
     {
         return [
             'user_id'           => 1,
+            'imagen'              => $this->faker->imageUrl(800,600),
             'nombre'            => fake()->name(),
             'email'             => fake()->safeEmail(),            
             'convencional'      => fake()->phoneNumber(),

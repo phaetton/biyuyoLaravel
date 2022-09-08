@@ -36,6 +36,10 @@
                         {{ __('Negocios') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('imagenes')" :active="request()->routeIs('imagenes')">
+                        {{ __('Imagenes') }}
+                    </x-nav-link>
+
 
                 </div>
             </div>

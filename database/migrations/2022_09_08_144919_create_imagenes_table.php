@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tiponegocios', function (Blueprint $table) {
+        Schema::create('imagenes', function (Blueprint $table) {
             $table->id();
-            $table->string('imagen')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('nombre');
+            $table->string('imagen');
             $table->longText('descripcion');
-            $table->string('slug')->unique();
+            $table->unsignedBigInteger('negocio_id');
+            $table->foreign('negocio_id')->references('id')->on('negocios');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiponegocios');
+        Schema::dropIfExists('imagenes');
     }
 };

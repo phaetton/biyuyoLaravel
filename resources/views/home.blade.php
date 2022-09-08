@@ -9,9 +9,9 @@
     <img src="{{asset('images/logo-mentors.png')}}" alt="" class="absolute right-20 -bottom-20 w-1/2">
 </div>
 
-@include('tiponegocios')
-@include('categorias')
 @include('negocios')
+@include('categorias')
+@include('tiponegocios')
 
 
 @endsection

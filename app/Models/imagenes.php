@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tiponegocios extends Model
+class imagenes extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = [
         'imagen',
-        'nombre',
-        'slug',
-        'descripcion'
+        'descripcion',
+        'negocio_id',
     ];
-
-    public function user(){
-        return $this->BelongsTo(User::class);
+ 
+    public function imagen()
+    {
+    	return $this->belongsTo(negocios::class);
     }
 }

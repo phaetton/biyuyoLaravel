@@ -9,12 +9,11 @@
 
 
 
-                <div class="w-full xl:w-4/6">
-                        <div class="flex flex-col space-y-16">
+                        <div class="grid grid-cols-2 gap-8">
                                 @foreach($ptiponegocios as $ptiponegocio)
                                 <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
                                         <a href="{{ route('tiponegocio',$ptiponegocio['slug']) }}">
-                                                <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" class="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
+                                                <img src="{{$ptiponegocio['imagen']}}" class="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
                                                 <div class="col-span-1 md:col-span-3">
                                                         <p class="mb-2 -mt-1 text-sm font-normal text-gray-500">{{$ptiponegocio['slug']}}</p>
                                                         <h2 class="mb-2 text-xl font-extrabold leading-snug text-gray-800">
@@ -33,7 +32,6 @@
 
                         </div>
 
-                </div>
 </section>
 
 {{$ptiponegocios->links()}}

@@ -10,7 +10,7 @@ class ClientesController extends Controller
     public function index()
     {
         return view('clientes.index', [
-            'clientes' => clientes::latest()->paginate()
+            'clientes' => clientes::latest()->paginate(16)
         ]);
     }
 
@@ -30,12 +30,19 @@ class ClientesController extends Controller
     // crear
     public function store(Request $request)
     {
-          //validación
-          $request->validate([
-            'nombre' => 'required',            
+        //validación
+        $request->validate([
+            'nombre' => 'required',
+            //     'imagen' => 'mimes:jpeg,jpg,png|max:10240',            
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
         $cliente = $request->user()->Clientes()->create([
+            'imagen'            =>  $filename,
             'nombre'            =>  $request->nombre,
             'email'             => $request->email,
             'convencional'      => $request->convencional,
@@ -48,6 +55,8 @@ class ClientesController extends Controller
             'twitter'           => $request->twitter,
             'active'            => "1",
         ]);
+    
+
 
         return redirect()->route('clientes.edit', $cliente);
     }
@@ -61,24 +70,46 @@ class ClientesController extends Controller
     // editar
     public function update(Request $request, clientes $cliente)
     {
-          //validación
-          $request->validate([
-            'nombre' => 'required',            
+        //validación
+        $request->validate([
+            'nombre' => 'required',
         ]);
 
-        $cliente->update([
-            'nombre'            =>  $request->nombre,
-            'email'             => $request->email,
-            'convencional'      => $request->convencional,
-            'tigo'              => $request->tigo,
-            'claro'             => $request->claro,
-            'facebook'          => $request->facebook,
-            'whatsapp'          => $request->whatsapp,
-            'instagram'         => $request->instagram,
-            'telegram'          => $request->telegram,
-            'twitter'           => $request->twitter,
-            'active'            => "1",
-        ]);
+        // dd($request->imagen);
+
+        if ($request->imagen) {
+            $filename = time() . "." . $request->imagen->extension();
+            $request->imagen->move(public_path("imagen"), $filename);
+
+            $cliente->update([
+                'imagen'            =>  $filename,
+                'nombre'            =>  $request->nombre,
+                'email'             => $request->email,
+                'convencional'      => $request->convencional,
+                'tigo'              => $request->tigo,
+                'claro'             => $request->claro,
+                'facebook'          => $request->facebook,
+                'whatsapp'          => $request->whatsapp,
+                'instagram'         => $request->instagram,
+                'telegram'          => $request->telegram,
+                'twitter'           => $request->twitter,
+                'active'            => "1",
+            ]);
+        } else {
+            $cliente->update([
+                'nombre'            =>  $request->nombre,
+                'email'             => $request->email,
+                'convencional'      => $request->convencional,
+                'tigo'              => $request->tigo,
+                'claro'             => $request->claro,
+                'facebook'          => $request->facebook,
+                'whatsapp'          => $request->whatsapp,
+                'instagram'         => $request->instagram,
+                'telegram'          => $request->telegram,
+                'twitter'           => $request->twitter,
+                'active'            => "1",
+            ]);
+        }
 
         return redirect()->route('clientes.edit', $cliente);
     }

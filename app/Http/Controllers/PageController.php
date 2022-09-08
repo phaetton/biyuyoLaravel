@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categorias;
 use App\Models\clientes;
 use App\Models\negocios;
+use App\Models\imagenes;
 use App\Models\tiponegocios;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,9 +18,9 @@ class PageController extends Controller
 
         $pnegocios = negocios::where('nombre', 'LIKE', "%{$search}%")
             ->with('user')
-            ->latest()->paginate();
-        $pcategorias = Categorias::latest()->paginate();
-        $ptiponegocios = tiponegocios::latest()->paginate();
+            ->latest()->paginate(16);
+        $pcategorias = Categorias::latest()->paginate(16);
+        $ptiponegocios = tiponegocios::latest()->paginate(16);
         return view('home', [
             'pnegocios' => $pnegocios,
             'pcategorias' => $pcategorias,
@@ -32,7 +33,7 @@ class PageController extends Controller
     {
         //consulta a la base de datos
         // $pcategorias =Categorias::get();
-        $pcategorias = Categorias::latest()->paginate();
+        $pcategorias = Categorias::latest()->paginate(16);
         return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
@@ -44,7 +45,7 @@ class PageController extends Controller
     //negocios
     public function negocios()
     {
-        $pnegocios = negocios::latest()->paginate();
+        $pnegocios = negocios::latest()->paginate(10);
         return view('negocios', ['pnegocios' => $pnegocios]);
     }
 
@@ -57,7 +58,7 @@ class PageController extends Controller
     //tipo negocios
     public function tiponegocios()
     {
-        $ptiponegocios = tiponegocios::latest()->paginate();
+        $ptiponegocios = tiponegocios::latest()->paginate(16);
         return view('tiponegocios', ['ptiponegocios' => $ptiponegocios]);
     }
 
@@ -70,7 +71,7 @@ class PageController extends Controller
     //usuarios
     public function usuarios()
     {
-        $pusuarios = User::latest()->paginate();
+        $pusuarios = User::latest()->paginate(16);
         return view('usuarios', ['pusuarios' => $pusuarios]);
     }
 
@@ -83,7 +84,7 @@ class PageController extends Controller
     //clientes
     public function clientes()
     {
-        $pclientes = clientes::latest()->paginate();
+        $pclientes = clientes::latest()->paginate(16);
         return view('clientes', ['pclientes' => $pclientes]);
     }
 
@@ -91,4 +92,16 @@ class PageController extends Controller
     {
         return view('cliente', ['pcliente' => $pcliente]);
     }
+
+      //imagenes
+      public function imagenes()
+      {
+          $pimagenes = imagenes::latest()->paginate(16);
+          return view('imagenes', ['pimagenes' => $pimagenes]);
+      }
+  
+      public function imagen(imagenes $pimagen)
+      {
+          return view('imagen', ['pimagen' => $pimagen]);
+      }
 }

@@ -11,7 +11,7 @@ class TiponegociosController extends Controller
     public function index()
     {
         return view('tiponegocios.index', [
-            'tiponegocios' => tiponegocios::latest()->paginate()
+            'tiponegocios' => tiponegocios::latest()->paginate(16)
         ]);
     }
 

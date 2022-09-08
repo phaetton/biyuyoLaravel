@@ -1,8 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
-            {{ __('Listado de Clientes') }}
-            <a href="{{route('clientes.create')}}" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
+            {{ __('Listado de Categorias') }}
+            <a href="{{ route('categorias.create') }}" 
+            class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
 
         </h2>
     </x-slot>
@@ -23,35 +24,23 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 text-sm font-light">
-                                    @forelse ($clientes as $cliente)
+                                    @forelse ($categorias as $categoria)
                                     <tr class="border-b border-gray-200 hover:bg-gray-100">
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
-                                            <!-- <div class="flex items-center">
-                                                <span class="font-medium"> {{$cliente->id}}</span>
-                                            </div> -->
-
                                             <div class="flex items-center">
-                                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                                    <img class="w-full h-full rounded-full" src="@if(isset($cliente->imagen)) imagen/{{$cliente->imagen}} @else imagen/user_placeholder.png @endif" alt="" />
-                                                </div>
-                                                <div class="ml-3">
-                                                    <p class="text-gray-900 whitespace-no-wrap">
-                                                        Team 1
-                                                    </p>
-                                                </div>
+                                                <span class="font-medium"> {{$categoria->id}}</span>
                                             </div>
-
                                         </td>
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <span class="font-medium"> {{$cliente->nombre}}</span>
+                                                <span class="font-medium"> {{$categoria->nombre}}</span>
                                             </div>
                                         </td>
 
-                                        <td class="py-3 px-6 flex gap-2 justify-end">
-                                            <a href="{{route('clientes.edit',$cliente)}}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a>
+                                        <td class="py-3 px-6  flex gap-2 justify-end">
+                                            <a href="{{ route('categorias.edit',$categoria) }}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a>
 
-                                            <form action="{{route('clientes.destroy',$cliente)}}" method="POST">
+                                            <form action="{{route('categorias.destroy',$categoria)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10" />
@@ -70,7 +59,7 @@
                             </table>
                         </div>
                     </div>
-                    {{$clientes->links()}}
+                    {{$categorias->links()}}
                 </div>
             </div>
         </div>
