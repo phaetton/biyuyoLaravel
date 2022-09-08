@@ -27,13 +27,22 @@
                                     @forelse ($negocios as $negocio)
                                     <tr class="border-b border-gray-200 hover:bg-gray-100">
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <span class="font-medium"> {{$negocio->id}}</span>
+                                           
+                                        <div class="flex items-center">
+                                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
+                                                    <img class="w-full h-full rounded-full" src="@if(isset($negocio->imagen)) imagen/{{$negocio->imagen}} @else imagen/user_placeholder.png @endif" alt="" />
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                        {{$negocio->nombre}}
+                                                    </p>
+                                                </div>
                                             </div>
+
                                         </td>
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <span class="font-medium"> {{$negocio->nombre}}</span>
+                                                <span class="font-medium"> {{$negocio->email}}</span>
                                             </div>
                                         </td>
 

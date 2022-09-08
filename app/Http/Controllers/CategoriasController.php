@@ -38,7 +38,14 @@ class CategoriasController extends Controller
             'descripcion' => 'required',
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+
         $categoria = $request->user()->Categorias()->create([
+            'imagen'            =>  $filename,
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion
@@ -62,7 +69,14 @@ class CategoriasController extends Controller
             'descripcion' => 'required',
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+
         $categoria->update([
+            'imagen'            =>  $filename,
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion

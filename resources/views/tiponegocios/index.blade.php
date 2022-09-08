@@ -27,14 +27,23 @@
                                     @forelse ($tiponegocios as $tiponegocio)
                                     <tr class="border-b border-gray-200 hover:bg-gray-100">
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <span class="font-medium"> {{$tiponegocio->id}}</span>
+                                            
+                                        <div class="flex items-center">
+                                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
+                                                    <img class="w-full h-full rounded-full" src="@if(isset($tiponegocio->imagen)) imagen/{{$tiponegocio->imagen}} @else imagen/user_placeholder.png @endif" alt="" />
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                        {{$tiponegocio->nombre}}
+                                                    </p>
+                                                </div>
                                             </div>
+
                                         </td>
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
-                                            <div class="flex items-center">
+                                            <!-- <div class="flex items-center">
                                                 <span class="font-medium"> {{$tiponegocio->nombre}}</span>
-                                            </div>
+                                            </div> -->
                                         </td>
 
                                         <td class="py-3 px-6  flex gap-2 justify-end">

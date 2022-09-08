@@ -43,7 +43,14 @@ class NegociosController extends Controller
             'descripcion' => 'required',
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+
         $negocio = $request->user()->Negocios()->create([
+            'imagen'            =>  $filename,
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion,
@@ -82,8 +89,15 @@ class NegociosController extends Controller
             'descripcion' => 'required',
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+
 
         $negocio->update([
+            'imagen'            =>  $filename,
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion,

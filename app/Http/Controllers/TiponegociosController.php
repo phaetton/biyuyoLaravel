@@ -33,8 +33,15 @@ class TiponegociosController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
         ]);
+
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
         
         $tiponegocio = $request->user()->tiponegocios()->create([
+            'imagen'            =>  $filename,
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion
@@ -57,7 +64,14 @@ class TiponegociosController extends Controller
             'descripcion' => 'required',
         ]);
 
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+
          $tiponegocio->update([
+            'imagen'            =>  $filename,
              'nombre' => $nombre = $request->nombre,
              'slug' => Str::slug($nombre),
              'descripcion' => $request->descripcion,

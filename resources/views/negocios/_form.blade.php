@@ -17,6 +17,14 @@
       <input name="slug" value="{{old('slug',$negocio->slug)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug">
       <!-- <p class="text-red text-xs italic">Please fill out this field.</p> -->
     </div>
+    <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        imagen
+      </label>
+      <input name="imagen" value="{{old ('imagen',$negocio->imagen)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="file" accept="image/*" placeholder="imagen">
+      
+    </div>
+  </div>
     <div class="md:w-1/2 px-3 ">
       <div class="flex gap-4 justify-center rounded-lg w-auto mt-6">
         <label class=" uppercase tracking-wide text-grey-darker text-xs font-bold" for="grid-first-name">

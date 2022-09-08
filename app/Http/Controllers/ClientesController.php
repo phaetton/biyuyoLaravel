@@ -75,12 +75,12 @@ class ClientesController extends Controller
             'nombre' => 'required',
         ]);
 
-        // dd($request->imagen);
-
-        if ($request->imagen) {
-            $filename = time() . "." . $request->imagen->extension();
-            $request->imagen->move(public_path("imagen"), $filename);
-
+        $filename='';
+        if($request->imagen){
+         $filename = time() . "." . $request->imagen->extension();
+        $request->imagen->move(public_path("imagen"), $filename);
+        }
+      
             $cliente->update([
                 'imagen'            =>  $filename,
                 'nombre'            =>  $request->nombre,
@@ -95,21 +95,7 @@ class ClientesController extends Controller
                 'twitter'           => $request->twitter,
                 'active'            => "1",
             ]);
-        } else {
-            $cliente->update([
-                'nombre'            =>  $request->nombre,
-                'email'             => $request->email,
-                'convencional'      => $request->convencional,
-                'tigo'              => $request->tigo,
-                'claro'             => $request->claro,
-                'facebook'          => $request->facebook,
-                'whatsapp'          => $request->whatsapp,
-                'instagram'         => $request->instagram,
-                'telegram'          => $request->telegram,
-                'twitter'           => $request->twitter,
-                'active'            => "1",
-            ]);
-        }
+    
 
         return redirect()->route('clientes.edit', $cliente);
     }
