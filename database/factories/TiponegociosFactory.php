@@ -20,6 +20,7 @@ class TiponegociosFactory extends Factory
     {
         return [
             'user_id'       => 1,
+            'imagen'              => $this->faker->imageUrl(),
             'nombre'        => $nombre = $this->faker->sentence(),
             'descripcion'   => $this->faker->text(2200),
             'slug'          => Str::slug($nombre),

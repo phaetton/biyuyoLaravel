@@ -13,7 +13,7 @@
         <div class="grid xs:grid-cols-1  md:grid-cols-2  gap-4">
             @foreach($pnegocios as $pnegocio)
             <a href="{{ route('negocio',$pnegocio['slug']) }}" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 w-full">
-                <img alt="123 Wallaby Avenue, Park Road" src="https://images.unsplash.com/photo-1554995207-c18c203602cb" class="object-cover w-full h-56 rounded-md" />
+                <img alt="{{$pnegocio->nombre}}" src="{{$pnegocio->imagen}}" class="object-cover w-full h-56 rounded-md" />
 
                 <div class="mt-2">
                     <div class="grid grid-cols-2  text-gray-800 text-xs">

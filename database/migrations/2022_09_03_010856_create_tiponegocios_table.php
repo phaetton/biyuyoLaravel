@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tiponegocios', function (Blueprint $table) {
             $table->id();
+            $table->string('imagen');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
