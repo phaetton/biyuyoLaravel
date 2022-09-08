@@ -21,13 +21,12 @@
                         <a href="{{ route('categoria',$pcategoria['slug']) }}" class="relative flex items-end w-full bg-black h-96 group">
                                 <img alt="Modded Bike" src="{{$pcategoria['imagen']}}" class="absolute inset-0 object-cover w-full h-full transition-opacity group-hover:opacity-90" />
 
-                                <div class="relative w-full p-6 tracking-widest text-center text-white bg-red-700 transition-colors sm:w-2/3 group-hover:bg-black">
-                                        <strong class="text-lg uppercase">
-                                        {{$pcategoria['nombre']}}
-                                        </strong>
+                                <div class="relative w-full p-6 tracking-widest text-center text-white bg-gray-700 transition-colors sm:w-2/3 group-hover:bg-black">
+                                       
 
                                         <p class="mt-1 text-xs font-medium uppercase">
-                                                Design your own
+                                        {{$pcategoria['nombre']}}
+
                                         </p>
                                 </div>
                         </a>
