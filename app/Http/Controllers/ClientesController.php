@@ -10,7 +10,7 @@ class ClientesController extends Controller
     public function index()
     {
         return view('clientes.index', [
-            'clientes' => clientes::latest()->paginate()
+            'clientes' => clientes::latest()->paginate(16)
         ]);
     }
 

@@ -15,7 +15,7 @@ class NegociosController extends Controller
     public function index()
     {
         return view('negocios.index', [
-            'negocios' => negocios::latest()->paginate()
+            'negocios' => negocios::latest()->paginate(16)
         ]);
     }
 

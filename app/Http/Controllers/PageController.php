@@ -17,9 +17,9 @@ class PageController extends Controller
 
         $pnegocios = negocios::where('nombre', 'LIKE', "%{$search}%")
             ->with('user')
-            ->latest()->paginate();
-        $pcategorias = Categorias::latest()->paginate();
-        $ptiponegocios = tiponegocios::latest()->paginate();
+            ->latest()->paginate(16);
+        $pcategorias = Categorias::latest()->paginate(16);
+        $ptiponegocios = tiponegocios::latest()->paginate(16);
         return view('home', [
             'pnegocios' => $pnegocios,
             'pcategorias' => $pcategorias,
@@ -57,7 +57,7 @@ class PageController extends Controller
     //tipo negocios
     public function tiponegocios()
     {
-        $ptiponegocios = tiponegocios::latest()->paginate();
+        $ptiponegocios = tiponegocios::latest()->paginate(16);
         return view('tiponegocios', ['ptiponegocios' => $ptiponegocios]);
     }
 
@@ -70,7 +70,7 @@ class PageController extends Controller
     //usuarios
     public function usuarios()
     {
-        $pusuarios = User::latest()->paginate();
+        $pusuarios = User::latest()->paginate(16);
         return view('usuarios', ['pusuarios' => $pusuarios]);
     }
 
@@ -83,7 +83,7 @@ class PageController extends Controller
     //clientes
     public function clientes()
     {
-        $pclientes = clientes::latest()->paginate();
+        $pclientes = clientes::latest()->paginate(16);
         return view('clientes', ['pclientes' => $pclientes]);
     }
 
