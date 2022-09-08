@@ -46,29 +46,5 @@ class ImagenesController extends Controller
 
         return redirect()->route('imagenes.edit', $imagen);
     }
-
-    public function edit(imagenes $imagen)
-    {
-        $negocios = negocios::all();
-        return view('imagenes.edit', ['imagen' => $imagen], with(compact('negocios')));
-    }
-    // editar
-    public function update(Request $request, imagenes $imagen)
-    {
-        //validación
-        $request->validate([
-            'imagen' => 'required',
-            'descripcion' => 'required',
-            'negocio_id' => 'required',
-        ]);
-
-
-        $imagen->update([
-            'imagen' => $request->imagen,
-            'descripcion' => $request->descripcion,
-            'negocio_id' => $request->negocio,
-        ]);
-
-        return redirect()->route('imagenes.edit', $imagen);
-    }
+  
 }
