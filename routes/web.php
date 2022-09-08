@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ImagenesController;
 use App\Http\Controllers\NegociosController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PageController;
@@ -72,5 +73,9 @@ Route::redirect('/clientes','clientes')->name('clientes');
 
  Route::redirect('/categorias','categorias')->name('categorias');
  Route::resource(('categorias'),CategoriasController::class)->middleware(['auth'])->except(['show']);
+
+ Route::redirect('/imagenes','imagenes')->name('imagenes');
+ Route::resource(('imagenes'),ImagenesController::class)->middleware(['auth'])->except(['show']);
+
 
 require __DIR__.'/auth.php';
