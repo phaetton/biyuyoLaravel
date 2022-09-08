@@ -10,6 +10,7 @@ class negocios extends Model
     use HasFactory;
 
     protected $fillable = [
+        'imagen',
         'nombre',
         'slug',
         'descripcion',

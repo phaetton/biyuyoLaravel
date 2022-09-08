@@ -39,7 +39,7 @@ class ImagenesController extends Controller
          ]);
 
 
-        return $request->file('imagen')->store('public/loadimagenes');
+        return $request->file('imagen')->store('');
 
 
         //         $imagen = $request->user()->imagenes()->create([

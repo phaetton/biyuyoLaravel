@@ -10,6 +10,7 @@ class tiponegocios extends Model
     use HasFactory;
 
     protected $fillable = [
+        'imagen',
         'nombre',
         'slug',
         'descripcion'

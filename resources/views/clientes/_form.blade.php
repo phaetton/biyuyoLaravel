@@ -18,6 +18,15 @@
     </div>
   </div>
 
+  <div class="md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        imagen
+      </label>
+      <input name="imagen" value="{{old ('imagen',$cliente->imagen)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="file" accept="image/*" placeholder="imagen">
+      
+    </div>
+  </div>
+
   <div class="-mx-3 md:flex mb-6">
     <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
