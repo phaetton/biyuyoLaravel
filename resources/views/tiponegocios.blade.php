@@ -9,8 +9,7 @@
 
 
 
-                <div class="w-full xl:w-4/6">
-                        <div class="flex flex-col space-y-16">
+                        <div class="grid grid-cols-2 gap-8">
                                 @foreach($ptiponegocios as $ptiponegocio)
                                 <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
                                         <a href="{{ route('tiponegocio',$ptiponegocio['slug']) }}">
@@ -33,7 +32,6 @@
 
                         </div>
 
-                </div>
 </section>
 
 {{$ptiponegocios->links()}}

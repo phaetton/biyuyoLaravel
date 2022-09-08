@@ -32,7 +32,7 @@ class PageController extends Controller
     {
         //consulta a la base de datos
         // $pcategorias =Categorias::get();
-        $pcategorias = Categorias::latest()->paginate();
+        $pcategorias = Categorias::latest()->paginate(16);
         return view('categorias', ['pcategorias' => $pcategorias]);
     }
 
@@ -44,7 +44,7 @@ class PageController extends Controller
     //negocios
     public function negocios()
     {
-        $pnegocios = negocios::latest()->paginate();
+        $pnegocios = negocios::latest()->paginate(10);
         return view('negocios', ['pnegocios' => $pnegocios]);
     }
 
