@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('imagenes', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
+            $table->string('imagen');
+            $table->longText('descripcion');
             $table->unsignedBigInteger('negocio_id');
             $table->foreign('negocio_id')->references('id')->on('negocios');
             $table->timestamps();

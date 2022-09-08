@@ -20,7 +20,7 @@ class NegociosFactory extends Factory
     {
         return [
             'user_id'           => 1,
-            'logo'              => 'https://source.unsplash.com/random',
+            'imagen'              => fake()->imageUrl(),
             'nombre'            => $nombre = $this->faker->sentence(),
             'descripcion'       => $this->faker->text(2200),
             'slug'              => Str::slug($nombre),

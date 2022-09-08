@@ -47,9 +47,9 @@ class NegociosController extends Controller
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion,
-            'categoria_id' => $request -> categoria,
-            'tiponegocio_id' => $request -> tiponegocio,
-            'cliente_id' => $request -> cliente,
+            'categoria_id' => $request->categoria,
+            'tiponegocio_id' => $request->tiponegocio,
+            'cliente_id' => $request->cliente,
             'email' => $request->email,
             'convencional' => $request->convencional,
             'tigo' => $request->tigo,
@@ -81,15 +81,13 @@ class NegociosController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
         ]);
-
-
         $negocio->update([
             'nombre' => $nombre = $request->nombre,
             'slug' => Str::slug($nombre),
             'descripcion' => $request->descripcion,
-            'categoria_id' => $request -> categoria,
-            'tiponegocio_id' => $request -> tiponegocio,
-            'cliente_id' => $request -> cliente,
+            'categoria_id' => $request->categoria,
+            'tiponegocio_id' => $request->tiponegocio,
+            'cliente_id' => $request->cliente,
             'email' => $request->email,
             'convencional' => $request->convencional,
             'tigo' => $request->tigo,
@@ -101,7 +99,6 @@ class NegociosController extends Controller
             'twitter' => $request->twitter,
             'active' => '1',
         ]);
-
         return redirect()->route('negocios.edit', $negocio);
     }
 }

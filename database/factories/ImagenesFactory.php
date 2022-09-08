@@ -17,7 +17,9 @@ class ImagenesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'imagen'              => fake()->imageUrl(),
+            'descripcion'       => $this->faker->text(500),
+            'negocio_id'      => 1,
         ];
     }
 }

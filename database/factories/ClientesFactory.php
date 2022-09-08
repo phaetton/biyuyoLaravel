@@ -19,7 +19,7 @@ class ClientesFactory extends Factory
     {
         return [
             'user_id'           => 1,
-            'foto'           => 'https://source.unsplash.com/random',
+            'imagen'              => fake()->imageUrl(),
             'nombre'            => fake()->name(),
             'email'             => fake()->safeEmail(),            
             'convencional'      => fake()->phoneNumber(),

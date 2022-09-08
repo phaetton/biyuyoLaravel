@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('negocios', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
+            $table->string('imagen');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
