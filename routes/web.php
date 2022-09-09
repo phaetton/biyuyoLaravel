@@ -30,7 +30,7 @@ Route::get('clientes/buscar', function (Request $request) {
 });
 
 Route::controller(PageController::class)->group(function () {
-    Route::get('/',                 'home')->name('home');
+    Route::get('/',                                 'home')->name('home');
 
     //categorias
     Route::get('categoria/{pcategoria:slug}',       'categoria')->name('categoria');
@@ -48,7 +48,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('cliente/{pcliente:id}',             'cliente')->name('cliente');
 
        //imagenes
-       Route::get('imagen/{pimagen:id}',             'imagen')->name('imagen');
+    Route::get('imagen/{pimagen:id}',               'imagen')->name('imagen');
 
     
 });

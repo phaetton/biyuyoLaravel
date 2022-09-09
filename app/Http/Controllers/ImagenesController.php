@@ -31,26 +31,55 @@ class ImagenesController extends Controller
     // crear
     public function store(Request $request)
     {
-
-        // $filename = '';
-        // if ($request->imagen) {
-        //     $filename = time() . "." . $request->imagen->extension();
-        //     $request->imagen->move(public_path("images/imagenes"), $filename);
-        // }
-
         //validación
         $request->validate([
             'nombre' => 'required',
-            'negocio_id' => 'required',
+            'descripcion' => 'required',
         ]);
 
-        // dd($request);
+        $filename = '';
+        if ($request->imagen) {
+            $filename = time() . "." . $request->imagen->extension();
+            $request->imagen->move(public_path("images/imagenes"), $filename);
+        }
 
-        $imagen = $request->user()->imagenes()->create([
-            // 'imagen'            =>  $filename,
-            'nombre' => $request->nombre,
-            'descripcion' => $request->descripcion,
-            'negocio_id' => $request->negocio,
+
+        $negocio = $request->user()->Imagenes()->create([
+            'imagen'            => $filename,
+            'nombre'            => $request->nombre,
+            'descripcion'       => $request->descripcion,
+            'negocio_id'        => $request->negocio
+        ]);
+
+        return redirect()->route('imagenes.edit', $negocio);
+    }
+
+    public function edit(imagenes $imagen)
+    {
+        $negocios = negocios::all();
+        return view('imagenes.edit', ['imagen' => $imagen], with(compact('negocios')));
+    }
+
+    // editar
+    public function update(Request $request, imagenes $imagen)
+    {
+        //validación
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
+        $filename = $imagen->imagen;
+        if ($request->imagen) {
+            $filename = time() . "." . $request->imagen->extension();
+            $request->imagen->move(public_path("images/imagenes"), $filename);
+        }
+
+        $imagen->update([
+            'imagen'            =>  $filename,
+            'nombre'            => $nombre = $request->nombre,
+            'descripcion'       => $request->descripcion,
+            'negocio_id'      => $request->negocio,
         ]);
 
         return redirect()->route('imagenes.edit', $imagen);
