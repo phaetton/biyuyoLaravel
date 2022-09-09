@@ -1,0 +1,30 @@
+ .content-table{
+      width: 80%;
+      max-height: 200px;
+      height: auto;
+      background: white;
+      margin-left: 120px;
+      overflow-y: visible;
+      overflow-x: hidden;
+  }
+  
+  .content-table a{
+    color: black;
+    outline: none;
+    text-decoration:none;
+  
+}
+
+.content-table a:hover{
+  background: rgba(0,0,0,0.3);
+
+}
+
+@media (min-width:  768px) {
+  #tamano{ 
+    height:420px;   
+  }
+  #tamanologo{
+     height: 419px;
+  }
+}

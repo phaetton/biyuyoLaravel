@@ -43,30 +43,37 @@ class NegociosController extends Controller
             'descripcion' => 'required',
         ]);
 
-        $filename='';
-        if($request->imagen){
-         $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("images/negocios"), $filename);
+        $filename = '';
+        if ($request->imagen) {
+            $filename = time() . "." . $request->imagen->extension();
+            $request->imagen->move(public_path("images/negocios"), $filename);
+        }
+
+        $logo = '';
+        if ($request->logo) {
+            $logo = time() . "." . $request->logo->extension();
+            $request->logo->move(public_path("images/logos"), $logo);
         }
 
         $negocio = $request->user()->Negocios()->create([
             'imagen'            =>  $filename,
-            'nombre' => $nombre = $request->nombre,
-            'slug' => Str::slug($nombre),
-            'descripcion' => $request->descripcion,
-            'categoria_id' => $request -> categoria,
-            'tiponegocio_id' => $request -> tiponegocio,
-            'cliente_id' => $request -> cliente,
-            'email' => $request->email,
-            'convencional' => $request->convencional,
-            'tigo' => $request->tigo,
-            'claro' => $request->claro,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-            'instagram' => $request->instagram,
-            'telegram' => $request->telegram,
-            'twitter' => $request->twitter,
-            'active' => "1",
+            'logo'              =>  $logo,
+            'nombre'            => $nombre = $request->nombre,
+            'slug'              => Str::slug($nombre),
+            'descripcion'       => $request->descripcion,
+            'categoria_id'      => $request->categoria,
+            'tiponegocio_id'    => $request->tiponegocio,
+            'cliente_id'        => $request->cliente,
+            'email'             => $request->email,
+            'convencional'      => $request->convencional,
+            'tigo'              => $request->tigo,
+            'claro'             => $request->claro,
+            'facebook'          => $request->facebook,
+            'whatsapp'          => $request->whatsapp,
+            'instagram'         => $request->instagram,
+            'telegram'          => $request->telegram,
+            'twitter'           => $request->twitter,
+            'active'            => "1",
         ]);
 
         return redirect()->route('negocios.edit', $negocio);
@@ -89,31 +96,37 @@ class NegociosController extends Controller
             'descripcion' => 'required',
         ]);
 
-        $filename='';
-        if($request->imagen){
-         $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("images/negocios"), $filename);
+        $filename = $negocio->imagen;
+        if ($request->imagen) {
+            $filename = time() . "." . $request->imagen->extension();
+            $request->imagen->move(public_path("images/negocios"), $filename);
         }
 
+        $logo = $negocio->logo;
+        if ($request->logo) {
+            $logo = time() . "." . $request->logo->extension();
+            $request->logo->move(public_path("images/logos"), $logo);
+        }
 
         $negocio->update([
             'imagen'            =>  $filename,
-            'nombre' => $nombre = $request->nombre,
-            'slug' => Str::slug($nombre),
-            'descripcion' => $request->descripcion,
-            'categoria_id' => $request -> categoria,
-            'tiponegocio_id' => $request -> tiponegocio,
-            'cliente_id' => $request -> cliente,
-            'email' => $request->email,
-            'convencional' => $request->convencional,
-            'tigo' => $request->tigo,
-            'claro' => $request->claro,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-            'instagram' => $request->instagram,
-            'telegram' => $request->telegram,
-            'twitter' => $request->twitter,
-            'active' => '1',
+            'logo'              =>  $logo,
+            'nombre'            => $nombre = $request->nombre,
+            'slug'              => Str::slug($nombre),
+            'descripcion'       => $request->descripcion,
+            'categoria_id'      => $request->categoria,
+            'tiponegocio_id'    => $request->tiponegocio,
+            'cliente_id'        => $request->cliente,
+            'email'             => $request->email,
+            'convencional'      => $request->convencional,
+            'tigo'              => $request->tigo,
+            'claro'             => $request->claro,
+            'facebook'          => $request->facebook,
+            'whatsapp'          => $request->whatsapp,
+            'instagram'         => $request->instagram,
+            'telegram'          => $request->telegram,
+            'twitter'           => $request->twitter,
+            'active'            => "1",
         ]);
 
         return redirect()->route('negocios.edit', $negocio);

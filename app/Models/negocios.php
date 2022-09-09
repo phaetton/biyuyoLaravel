@@ -11,6 +11,7 @@ class negocios extends Model
 
     protected $fillable = [
         'imagen',
+        'logo',
         'nombre',
         'slug',
         'descripcion',

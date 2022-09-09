@@ -12,6 +12,7 @@ class imagenes extends Model
     
     protected $fillable = [
         'imagen',
+        'nombre',
         'descripcion',
         'negocio_id',
     ];
@@ -19,5 +20,9 @@ class imagenes extends Model
     public function imagen()
     {
     	return $this->belongsTo(negocios::class);
+    }
+
+    public function user(){
+        return $this->BelongsTo(User::class);
     }
 }

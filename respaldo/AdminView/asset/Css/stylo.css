@@ -1,0 +1,279 @@
+/*
+Inicio de css de jean,dilan
+*/
+
+/*
+TEMA AZUL
+*/
+.theme-1{
+    background-color: #b6c9f0;
+  }
+  .theme-1 .col-4 i{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 30px;
+  }
+  .theme-1  .titulo{
+      color: darkcyan;
+      text-align: center;
+      margin-block-end: 0rem;
+  }
+  /*
+  TEMA :
+  */
+  /*
+TEMA AZUL
+*/
+.theme-2{
+    background-color: #DEDDFA;
+  }
+  .theme-2 .col-4 i{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 30px;
+  }
+  .theme-2  .titulo{
+      color: darkcyan;
+      text-align: center;
+      margin-block-end: 0rem;
+  }
+ 
+  /*
+TEMA AZUL
+*/
+.theme-3{
+    background-color: #CAF7E3;
+  }
+  .theme-3 .col-4 i{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 30px;
+  }
+  .theme-3  .titulo{
+      color: darkcyan;
+      text-align: center;
+      margin-block-end: 0rem;
+  }
+   /*
+TEMA AZUL
+*/
+  .theme-4{
+    background-color: #dbd8a4;
+  }
+  .theme-4 .col-4 i{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 30px;
+  }
+  .theme-4  .titulo{
+      color: #4d3800;
+      text-align: center;
+      margin-block-end: 0rem;
+  }
+  .over{
+      overflow:hidden;
+  }
+  .cardhover:hover{
+      box-shadow: 0px 0px 20px #000000;
+  }
+  
+  .text{
+      text-align: center;
+      font-weight: normal;
+      color: darkslategray;
+  }
+  p{
+      font-family:sans-serif;
+      margin-left: 0.5rem;
+      font-weight: 100;
+      color: darkslategray;
+  }
+  .item{
+  transition: .3s ease-in-out;
+  }
+  .item:hover{
+      filter: brightness(70%);
+  }
+  .item:hover .vermas
+  { 
+      visibility: hidden;
+  }
+  .vermas {
+      border-radius: 10px;
+      background-color:rgb(243, 243, 243);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+      }
+  .item{
+      position: relative;
+      text-align: center;
+      color: #53bcf2;
+    }
+  
+  .ver{
+      font-weight: 500;
+      color: #53bcf2;
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+  
+  /*
+  Fin de css de jean,dilan
+  */
+  
+  /*
+  Inicio de css de Hugo,Helen
+  */
+  .banner{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mentoradosbusiness-fe39b.appspot.com/o/Recursos%2FImagenes%2FBanner%2Fbanner.png?alt=media&token=872e7818-9e73-40c5-aadb-b1867315a03a);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 350px;
+}
+.buscador{
+    background-color: transparent;
+
+}
+.contacto{
+    border: 1px solid #e6e5e2;
+}
+.card-body{
+    color: #161d6f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.card-fondo:hover{
+  opacity: 0.9;
+}
+.card-fondo{
+  background-color: white;
+  width: auto;
+  opacity: 0.7;
+  border-radius: 10px;
+  padding: 10px;
+}
+.card-fondo > h4{
+  font-size: 50px;
+}
+.card-product{
+    background-image: url('./../img/producto.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 300px;
+    border-radius: 15px;
+}
+.card-service{
+  background-image: url('./../img/servicio.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+  border-radius: 15px;
+  }
+  .zoom {
+      transition: transform .2s; 
+  } 
+  .zoom:hover {
+      transform: scale(1.03); 
+  }
+@media (max-width: 700px) {
+  .banner{ 
+    background-image: none;
+    background-color: #161d6f;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .logo{
+      width: 30%;
+  }
+}
+  /*
+  Fin de css de Helen,Hugo
+  */
+
+  /*-------Miguel y Yanilt-------
+----Categorias en el nav----*/
+
+.categorias{
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    transition: 0.3s;
+}
+
+.categorias option{
+    background: #ffffff;
+}
+
+.categorias:hover{
+    outline: none;
+    box-shadow: 0 0 2rem 5px rgba(9, 46, 212, 0.3);
+}
+
+.fa-whatsapp{
+    color:#00bb2d;
+    font-size: 20px;
+}
+.fa-map-marker-alt{
+    color:red;
+}
+.fa-facebook-f{
+    font-size: 30px;
+}
+
+
+
+.icoplace{
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+content: "\f2b5";
+
+
+}
+.icoplace2{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f27a";
+    
+    
+    }
+     /*css Yanilt y miguel*/
+     .select {
+        position: relative;
+        border: 1px solid #ccc;
+        width: 120px;
+        height: auto;
+        overflow: hidden;
+        background-color: #fff;
+      }
+        
+      .select:before {
+          content: '';
+          position: absolute;
+          right: 5px;
+          top: 20px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7px 5px 0 5px;
+          border-color: #000000 transparent transparent transparent;
+          z-index: 5;
+          pointer-events: none;
+      }
+        
+      .select select {
+          padding: 5px 8px;
+          width: 300%;
+          height: 100%;
+          border: none;
+          box-shadow: none;
+          background-color: transparent;
+          background-image: none;
+          appearance: none;
+      }

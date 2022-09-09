@@ -17,9 +17,11 @@ class ImagenesFactory extends Factory
     public function definition()
     {
         return [
-            'imagen'              => $this->faker->imageUrl(),
+            'user_id'           => 1,
+            'imagen'            => $this->faker->imageUrl(),
+            'nombre'            => fake()->name(),
             'descripcion'       => $this->faker->text(500),
-            'negocio_id'      => 1,
+            'negocio_id'        => 1,
         ];
     }
 }

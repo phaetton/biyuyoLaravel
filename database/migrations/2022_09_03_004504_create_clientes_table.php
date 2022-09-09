@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('imagen')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nombre');
             $table->string('email')->nullable();
             $table->string('convencional')->nullable();
@@ -30,6 +28,9 @@ return new class extends Migration
             $table->string('twitter')->nullable();
             $table->boolean('active')->nullable();
             $table->timestamps();
+            
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

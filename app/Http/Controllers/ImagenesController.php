@@ -32,27 +32,27 @@ class ImagenesController extends Controller
     public function store(Request $request)
     {
 
-        $filename='';
-        if($request->imagen){
-         $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("images/imagenes"), $filename);
-        }
+        // $filename = '';
+        // if ($request->imagen) {
+        //     $filename = time() . "." . $request->imagen->extension();
+        //     $request->imagen->move(public_path("images/imagenes"), $filename);
+        // }
 
         //validación
-         $request->validate([
-            'descripcion' => 'required',
+        $request->validate([
+            'nombre' => 'required',
             'negocio_id' => 'required',
-         ]);
+        ]);
 
+        // dd($request);
 
+        $imagen = $request->user()->imagenes()->create([
+            // 'imagen'            =>  $filename,
+            'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
+            'negocio_id' => $request->negocio,
+        ]);
 
-
-                $imagen = $request->user()->imagenes()->create([
-                    'imagen'            =>  $filename,
-                    'descripcion' => $request->descripcion,
-                    'negocio_id' => $request->negocio,
-                ]);
-
-                return redirect()->route('imagenes.edit', $imagen);
+        return redirect()->route('imagenes.edit', $imagen);
     }
 }

@@ -16,17 +16,10 @@ return new class extends Migration
         Schema::create('negocios', function (Blueprint $table) {
             $table->id();
             $table->string('imagen')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('logo')->nullable();
             $table->string('nombre');
             $table->longText('descripcion');
             $table->string('slug')->unique();
-            $table->unsignedBigInteger('categoria_id');
-            $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->unsignedBigInteger('tiponegocio_id');
-            $table->foreign('tiponegocio_id')->references('id')->on('tiponegocios');
-            $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->string('email')->nullable();
             $table->string('convencional')->nullable();
             $table->string('tigo')->nullable();
@@ -37,6 +30,15 @@ return new class extends Migration
             $table->string('telegram')->nullable();
             $table->string('twitter')->nullable();
             $table->boolean('active');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');            
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->unsignedBigInteger('tiponegocio_id');
+            $table->foreign('tiponegocio_id')->references('id')->on('tiponegocios');
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();
         });
     }
