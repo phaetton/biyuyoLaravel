@@ -54,34 +54,5 @@ class ImagenesController extends Controller
         return redirect()->route('imagenes.index');
     }
 
-    // public function edit(imagenes $imagen)
-    // {
-    //     $negocios = negocios::all();
-    //     return view('imagenes.edit', ['imagen' => $imagen], with(compact('negocios')));
-    // }
-
-    // editar
-    // public function update(Request $request, imagenes $imagen)
-    // {
-    //     //validación
-    //     $request->validate([
-    //         'nombre' => 'required',
-    //         'descripcion' => 'required',
-    //     ]);
-
-    //     $filename = $imagen->imagen;
-    //     if ($request->imagen) {
-    //         $filename = time() . "." . $request->imagen->extension();
-    //         $request->imagen->move(public_path("images/imagenes"), $filename);
-    //     }
-
-    //     $imagen->update([
-    //         'imagen'            => $filename,
-    //         'nombre'            => $request->nombre,
-    //         'descripcion'       => $request->descripcion,
-    //         'negocio_id'        => $request->negocio,
-    //     ]);
-
-    //     return redirect()->route('imagenes.index');
-    // }
+   
 }

@@ -134,4 +134,6 @@
 </section>
 
 
+@include('imagenes');
+
 @endsection

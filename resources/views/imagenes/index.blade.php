@@ -20,7 +20,7 @@
                         <a class="relative block border border-gray-100" href="/product/build-your-own-drone">
 
 
-                            <img class="object-contain w-full h-56 lg:h-72" src="@if(isset($imagen->imagen)) images/imagenes/{{$imagen->imagen}} @else images/user_placeholder.png @endif" alt="Build Your Own Drone" loading="lazy" />
+                            <img class="object-contain w-full h-56 lg:h-72" src="@if(isset($imagen->imagen)) ../images/imagenes/{{$imagen->imagen}} @else ../images/user_placeholder.png @endif" alt="Build Your Own Drone" loading="lazy" />
 
                             <div class="p-6">
 

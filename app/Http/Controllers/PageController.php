@@ -55,7 +55,13 @@ class PageController extends Controller
 
     public function negocio(negocios $pnegocio)
     {
-        return view('negocio', ['pnegocio' => $pnegocio]);
+        $search = $pnegocio->id;
+        $pimagenes = imagenes::latest()->paginate(16);
+
+        return view('negocio', [
+            'pnegocio' => $pnegocio,
+            'pimagenes' => $pimagenes
+        ]);
     }
 
 
@@ -70,9 +76,9 @@ class PageController extends Controller
     {
         $search = $ptiponegocio->id;
         $pnegocios = negocios::where('categoria_id', 'LIKE', "%{$search}%")
-        ->with('user')
-        ->latest()->paginate(16);
-        return view('tiponegocio', ['ptiponegocio' => $ptiponegocio,'pnegocios' => $pnegocios]);
+            ->with('user')
+            ->latest()->paginate(16);
+        return view('tiponegocio', ['ptiponegocio' => $ptiponegocio, 'pnegocios' => $pnegocios]);
     }
 
 
@@ -101,15 +107,15 @@ class PageController extends Controller
         return view('cliente', ['pcliente' => $pcliente]);
     }
 
-      //imagenes
-      public function imagenes()
-      {
-          $pimagenes = imagenes::latest()->paginate(16);
-          return view('imagenes', ['pimagenes' => $pimagenes]);
-      }
-  
-      public function imagen(imagenes $pimagen)
-      {
-          return view('imagen', ['pimagen' => $pimagen]);
-      }
+    //imagenes
+    public function imagenes()
+    {
+        $pimagenes = imagenes::latest()->paginate(16);
+        return view('imagenes', ['pimagenes' => $pimagenes]);
+    }
+
+    public function imagen(imagenes $pimagen)
+    {
+        return view('imagen', ['pimagen' => $pimagen]);
+    }
 }
