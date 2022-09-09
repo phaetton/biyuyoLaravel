@@ -2,73 +2,68 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
             {{ __('Listado de imagenes') }}
-            <a href="{{route('imagenes.create')}}" 
-            class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
+            <a href="{{route('imagenes.create')}}" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
 
         </h2>
     </x-slot>
 
+
+
+
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class=" container mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <!-- component -->
-                    <div class="w-full lg:w-5/6">
-                        <div class="bg-white shadow-md rounded my-6">
-                            <table class="min-w-max w-full table-auto">
-                                <thead>
-                                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                        <th class="py-3 px-6 text-left">Id</th>
-                                        <th class="py-3 px-6 text-left">Nombre</th>
-                                        <th class="py-3 px-6 text-left"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-gray-600 text-sm font-light">
-                                    @forelse ($imagenes as $imagen)
-                                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                                        <td class="py-3 px-6 text-left whitespace-nowrap">
-                                           
-                                        <div class="flex items-center">
-                                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                                    <img class="w-full h-full rounded-full" src="@if(isset($imagen->imagen)) images/imagenes/{{$imagen->imagen}} @else images/user_placeholder.png @endif" alt="" />
-                                                </div>
-                                                <div class="ml-3">
-                                                    <p class="text-gray-900 whitespace-no-wrap">
-                                                        {{$imagen->id}}
-                                                        {{$imagen->nombre}}
+                <div class="p-6  border-b border-gray-200">
+                    <div class="grid grid-cols-4 -m-1 md:-m-2 gap-2">
+                        @forelse ($imagenes as $imagen)
 
-                                                    </p>
-                                                </div>
-                                            </div>
+                        <a class="relative block border border-gray-100" href="/product/build-your-own-drone">
 
-                                        </td>
-                                        <td class="py-3 px-6 text-left whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <span class="font-medium"> {{$imagen->email}}</span>
-                                            </div>
-                                        </td>
 
-                                        <td class="py-3 px-6  flex gap-2 justify-end">
-                                            <!-- <a href="{{route('imagenes.edit',$imagen)}}" class="px-4 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 font-bold  shadow-lg shadow-green-200 transition ease-in-out duration-200 translate-10">Editar</a> -->
+                            <img class="object-contain w-full h-56 lg:h-72" src="@if(isset($imagen->imagen)) images/imagenes/{{$imagen->imagen}} @else images/user_placeholder.png @endif" alt="Build Your Own Drone" loading="lazy" />
 
-                                            <form action="{{route('imagenes.destroy',$imagen)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10" />
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @empty
-                                    <tr class="border-b border-gray-200 text-sm">
-                                        Upps! no hay ninguna publicacion disponible
-                                    </tr>
-                                    @endforelse
+                            <div class="p-6">
+
+
+                                <h5 class="mt-4 text-lg font-bold">
+                                    {{$imagen->negocio_id}} - {{$imagen->nombre}}
+                                </h5>
+
+                                <p class="mt-2 text-sm text-gray-700 overflow-y-hidden h-20 w-full ">
+                                    {{$imagen->descripcion}}
+                                </p>
 
 
 
-                                </tbody>
-                            </table>
-                        </div>
+                                <form action="{{route('imagenes.destroy',$imagen)}}" class="" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class="block w-full p-4 mt42  text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10" />
+                                </form>
+                            </div>
+                        </a>
+
+
+                        <!-- <div class="flex flex-wrap w-1/3">
+                                    <div class="w-full p-1 md:p-2">
+                                        <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="@if(isset($imagen->imagen)) images/imagenes/{{$imagen->imagen}} @else images/user_placeholder.png @endif">
+                                    </div>
+                                   
+                                </div> -->
+
+
+
+
+
+
+
+
+
+
+
+                        @empty
+                        Upps! no hay ninguna publicacion disponible
+                        @endforelse
                     </div>
                     {{$imagenes->links()}}
                 </div>

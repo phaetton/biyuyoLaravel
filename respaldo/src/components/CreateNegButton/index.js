@@ -1,1 +1,0 @@
-export { CreateNegButton } from "./CreateNegButton"

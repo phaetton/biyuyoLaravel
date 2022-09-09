@@ -31,34 +31,21 @@ Route::get('clientes/buscar', function (Request $request) {
 
 Route::controller(PageController::class)->group(function () {
     Route::get('/',                                 'home')->name('home');
-
     //categorias
     Route::get('categoria/{pcategoria:slug}',       'categoria')->name('categoria');
-
     //negocios
     Route::get('negocio/{pnegocio:slug}',           'negocio')->name('negocio');
-
     //tipo negocios
     Route::get('tiponegocio/{ptiponegocio:slug}',   'tiponegocio')->name('tiponegocio');
-
     //usuarios
     Route::get('usuario/{pusuario:id}',             'usuario')->name('usuario');
-
     //clientes
     Route::get('cliente/{pcliente:id}',             'cliente')->name('cliente');
-
        //imagenes
     Route::get('imagen/{pimagen:id}',               'imagen')->name('imagen');
 
     
 });
-
-
-
-// Route::resource(('categorias'),CategoriasController::class)->except(['show']);
-// Route::resource(('negocios'),NegociosController::class)->except(['show']);
-// Route::resource(('tiponegocios'),TiponegociosController::class)->except(['show']);
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
