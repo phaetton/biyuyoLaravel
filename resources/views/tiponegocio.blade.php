@@ -1,11 +1,36 @@
 @extends('template')
 
 @section('content')
-<h1>Detalle del tipo de negocio</h1>
-<h1>{{$ptiponegocio->nombre}}</h1>
-<p>id: {{$ptiponegocio->id}}</p>
-<p>descripcion: {{$ptiponegocio->descripcion}}</p>
-<p>slug: {{$ptiponegocio->slug}}</p>
-<p>created_at: {{$ptiponegocio->created_at}}</p>
-<p>updated_at: {{$ptiponegocio->updated_at}}</p>
+
+
+<a class="relative block bg-black group" href="">
+  <img
+    class="absolute inset-0 object-cover w-full h-full opacity-75 transition-opacity  group-hover:opacity-50"
+    src="../images/tiponegocios/{{$ptiponegocio->imagen}}"
+    alt=""
+  />
+  <div class="relative p-8">
+    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">
+      Categoria
+    </p>
+
+    <p class="text-2xl font-bold text-white">{{$ptiponegocio->nombre}}</p>
+
+    <div class="mt-64">
+      <div
+        class="opacity-0 transition-all transform translate-y-8  group-hover:opacity-100 group-hover:translate-y-0"
+      >
+        <p class="text-sm text-white">
+        {{$ptiponegocio->descripcion}}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+
+
+
+@include('negocios');
+
+
 @endsection

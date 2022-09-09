@@ -39,7 +39,11 @@ class PageController extends Controller
 
     public function categoria(Categorias $pcategoria)
     {
-        return view('categoria', ['pcategoria' => $pcategoria]);
+        $search = $pcategoria->id;
+        $pnegocios = negocios::where('categoria_id', 'LIKE', "%{$search}%")
+            ->with('user')
+            ->latest()->paginate(16);
+        return view('categoria', ['pcategoria' => $pcategoria, 'pnegocios' => $pnegocios]);
     }
 
     //negocios
@@ -64,7 +68,11 @@ class PageController extends Controller
 
     public function tiponegocio(tiponegocios $ptiponegocio)
     {
-        return view('tiponegocio', ['ptiponegocio' => $ptiponegocio]);
+        $search = $ptiponegocio->id;
+        $pnegocios = negocios::where('categoria_id', 'LIKE', "%{$search}%")
+        ->with('user')
+        ->latest()->paginate(16);
+        return view('tiponegocio', ['ptiponegocio' => $ptiponegocio,'pnegocios' => $pnegocios]);
     }
 
 

@@ -46,7 +46,7 @@ class NegociosController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/negocios"), $filename);
         }
 
         $negocio = $request->user()->Negocios()->create([
@@ -92,7 +92,7 @@ class NegociosController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/negocios"), $filename);
         }
 
 

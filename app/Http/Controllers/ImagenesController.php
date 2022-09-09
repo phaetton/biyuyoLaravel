@@ -35,7 +35,7 @@ class ImagenesController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/imagenes"), $filename);
         }
 
         //validación

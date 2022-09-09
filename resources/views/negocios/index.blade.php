@@ -30,7 +30,7 @@
                                            
                                         <div class="flex items-center">
                                                 <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                                    <img class="w-full h-full rounded-full" src="@if(isset($negocio->imagen)) imagen/{{$negocio->imagen}} @else imagen/user_placeholder.png @endif" alt="" />
+                                                    <img class="w-full h-full rounded-full" src="@if(isset($negocio->imagen)) images/negocios/{{$negocio->imagen}} @else images/user_placeholder.png @endif" alt="" />
                                                 </div>
                                                 <div class="ml-3">
                                                     <p class="text-gray-900 whitespace-no-wrap">

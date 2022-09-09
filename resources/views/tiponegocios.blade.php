@@ -13,7 +13,7 @@
                                 @foreach($ptiponegocios as $ptiponegocio)
                                 <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
                                         <a href="{{ route('tiponegocio',$ptiponegocio['slug']) }}">
-                                                <img src="{{$ptiponegocio['imagen']}}" class="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
+                                                <img src="images/tiponegocios/{{$ptiponegocio['imagen']}}" class="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
                                                 <div class="col-span-1 md:col-span-3">
                                                         <p class="mb-2 -mt-1 text-sm font-normal text-gray-500">{{$ptiponegocio['slug']}}</p>
                                                         <h2 class="mb-2 text-xl font-extrabold leading-snug text-gray-800">

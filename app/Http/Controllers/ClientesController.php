@@ -39,7 +39,7 @@ class ClientesController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/clientes"), $filename);
         }
         $cliente = $request->user()->Clientes()->create([
             'imagen'            =>  $filename,
@@ -78,7 +78,7 @@ class ClientesController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/clientes"), $filename);
         }
       
             $cliente->update([

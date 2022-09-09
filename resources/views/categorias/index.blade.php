@@ -30,7 +30,7 @@
                                            
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                                    <img class="w-full h-full rounded-full" src="@if(isset($categoria->imagen)) imagen/{{$categoria->imagen}} @else imagen/user_placeholder.png @endif" alt="" />
+                                                    <img class="w-full h-full rounded-full" src="@if(isset($categoria->imagen)) images/categorias/{{$categoria->imagen}} @else images/user_placeholder.png @endif" alt="" />
                                                 </div>
                                                 <div class="ml-3">
                                                     <p class="text-gray-900 whitespace-no-wrap truncate">
@@ -41,9 +41,7 @@
 
                                         </td>
                                         <td class="py-3 px-6 text-left whitespace-nowrap truncate">
-                                            <!-- <div class="flex items-center">
-                                                <span class="font-medium "> {{$categoria->descripcion}}</span>
-                                            </div> -->
+                                          
                                         </td>
 
                                         <td class="py-3 px-6  flex gap-2 justify-end">

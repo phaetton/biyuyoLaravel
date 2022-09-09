@@ -41,7 +41,7 @@ class CategoriasController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/categorias"), $filename);
         }
 
         $categoria = $request->user()->Categorias()->create([
@@ -72,7 +72,7 @@ class CategoriasController extends Controller
         $filename='';
         if($request->imagen){
          $filename = time() . "." . $request->imagen->extension();
-        $request->imagen->move(public_path("imagen"), $filename);
+        $request->imagen->move(public_path("images/categorias"), $filename);
         }
 
         $categoria->update([
