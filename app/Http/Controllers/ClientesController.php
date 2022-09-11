@@ -58,7 +58,9 @@ class ClientesController extends Controller
     
 
 
-        return redirect()->route('clientes.edit', $cliente);
+        return view('clientes.index', [
+            'clientes' => clientes::latest()->paginate(16)
+        ]);
     }
 
     //    formulario editar

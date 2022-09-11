@@ -25,7 +25,6 @@
     </div>
   </div>
 </a>
-
-
 @include('negocios');
+
 @endsection

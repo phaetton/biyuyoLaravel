@@ -43,7 +43,13 @@ class PageController extends Controller
         $pnegocios = negocios::where('categoria_id', 'LIKE', "%{$search}%")
             ->with('user')
             ->latest()->paginate(16);
-        return view('categoria', ['pcategoria' => $pcategoria, 'pnegocios' => $pnegocios]);
+
+        $pimagenes = imagenes::latest()->paginate(16);
+        return view('categoria', [
+            'pcategoria' => $pcategoria,
+            'pnegocios' => $pnegocios,
+            'pimagenes' => $pimagenes
+        ]);
     }
 
     //negocios

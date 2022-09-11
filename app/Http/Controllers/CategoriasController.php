@@ -51,7 +51,9 @@ class CategoriasController extends Controller
             'descripcion' => $request->descripcion
         ]);
 
-        return redirect()->route('categorias.edit', $categoria);
+        return view('categorias.index', [
+            'categorias' => Categorias::latest()->paginate(16)
+        ]);
     }
 
     // formulario de editar

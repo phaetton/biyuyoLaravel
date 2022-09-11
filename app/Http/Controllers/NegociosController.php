@@ -31,7 +31,16 @@ class NegociosController extends Controller
         $categorias = Categorias::all();
         $tiponegocios = tiponegocios::all();
         $clientes = clientes::all();
-        return view('negocios.create', ['negocio' => $negocio], with(compact('categorias', 'tiponegocios', 'clientes')));
+        return view(
+            'negocios.create',
+            ['negocio' => $negocio],
+            with(compact(
+                '
+         categorias',
+                'tiponegocios',
+                'clientes'
+            ))
+        );
     }
 
     // crear
@@ -76,7 +85,9 @@ class NegociosController extends Controller
             'active'            => "1",
         ]);
 
-        return redirect()->route('negocios.edit', $negocio);
+        return view('negocios.index', [
+            'negocios' => negocios::latest()->paginate(16)
+        ]);
     }
 
     public function edit(negocios $negocio)
@@ -85,7 +96,11 @@ class NegociosController extends Controller
         $tiponegocios = tiponegocios::all();
         $clientes = clientes::all();
 
-        return view('negocios.edit', ['negocio' => $negocio], with(compact('categorias', 'tiponegocios', 'clientes')));
+        return view('negocios.edit', ['negocio' => $negocio], with(compact(
+            'categorias',
+            'tiponegocios',
+            'clientes'
+        )));
     }
     // editar
     public function update(Request $request, negocios $negocio)

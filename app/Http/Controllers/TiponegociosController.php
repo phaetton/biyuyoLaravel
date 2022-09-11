@@ -47,7 +47,9 @@ class TiponegociosController extends Controller
             'descripcion' => $request->descripcion
         ]);
 
-        return redirect()->route('tiponegocios.edit', $tiponegocio);
+        return view('tiponegocios.index', [
+            'tiponegocios' => tiponegocios::latest()->paginate(16)
+        ]);
     }
 
     public function edit(tiponegocios $tiponegocio)

@@ -10,13 +10,7 @@
             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre" >
             <p class="text-red-600 text-xs italic">@error ('nombre') {{$message}} @enderror</p>
         </div>
-        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-                Slug
-            </label>
-            <input value="{{ old('slug', $categoria->slug) }}" name="slug" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Slug" >
-            <!-- <p class="text-red-600 text-xs italic">Please fill out this field.</p> -->
-        </div>
+      
         <div class="md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
         imagen
