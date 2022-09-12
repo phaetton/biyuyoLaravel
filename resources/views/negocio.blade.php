@@ -2,15 +2,6 @@
 
 @section('content')
 
-
-<!-- component -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" /> -->
-
-
-<!-- This is an example component -->
-
-
-
 <section class="text-gray-600 body-font overflow-hidden">
     <div class="container px-5 py-24 mx-auto">
         <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -85,11 +76,8 @@
                                 <span class="text-gray-500">instagram</span>
                                 <span class="ml-auto text-gray-900"> {{$pnegocio->instagram}}</span>
                             </div>
-
                             </p>
                         </div>
-
-                        
 
                         <div class="bg-gray-50 p-4 rounded-lg dark:bg-gray-800 hidden" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
                             <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -101,9 +89,6 @@
                                     <p class="mt-3">Nuestro email es {{$pnegocio->email}} o envianos un mensaje aqui:</p>
 
                                     <form action="#" class="mt-10">
-
-
-
                                         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
                                         <div class="grid gap-6 sm:grid-cols-2">
                                             <div class="relative z-0">
@@ -124,11 +109,111 @@
                                 </div>
                             </div>.</p>
                         </div>
-                    </div>                
+                    </div>
                 </div>
 
             </div>
-            <img class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="../images/negocios/{{$pnegocio->imagen}}">
+            <img class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="@if (true) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif">
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="px-4 pb-12 mx-auto  sm:px-6 lg:px-8">
+        <div class="mt-4 bg-gray-200 border border-gray-200 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($pimagenes as $pimagen)
+            <div class="relative block bg-white ">
+
+                <img loading="lazy" alt="Build Your Own Drone" class="object-contain w-full h-56 lg:h-72" src="@if (true) {{$pimagen->imagen}} @else ../images/negocios/{{$pimagen->imagen}} @endif" />
+
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-yellow-500">
+                        {{$pimagen->nombre}}
+                    </span>
+
+                    <h5 class="mt-4 text-lg h-20 overflow-y-auto  ">
+                        {{$pimagen->descripcion}}
+                    </h5>
+
+                    <!-- <p class="mt-2 text-sm font-medium text-gray-600">
+                                $14.99
+                            </p> -->
+<!-- 
+                    <button name="add" type="button" class="flex items-center justify-center w-full px-8 py-4 mt-4 bg-gray-900 text-white rounded-sm"> -->
+
+
+
+
+
+
+                        <button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" class="text-white bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm mt-4  px-4 py-2.5 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 w-full" type="button">Project users <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownUsers" class="hidden z-10 w-60 bg-white rounded shadow dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 510px);">
+                            <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
+                                <li>
+                                    <a href="{{$pnegocio->facebook}}" class="flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('../images/facebookicono.png')}}" alt="Jese image">
+                                        facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{$pnegocio->whatsapp}}" class="flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('images/whatsappicono.png')}}" alt="Jese image">
+                                        whatsapp
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{$pnegocio->telegram}}" class="flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('images/telegramicono.png')}}" alt="Jese image">
+                                    telegram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{$pnegocio->instagram}}" class="flex items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('images/instagramicono.png')}}" alt="Jese image">
+                                      instagram
+                                    </a>
+                                </li>
+                           
+                             
+                            </ul>
+                      
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- </button> -->
+                </div>
+            </div>
+
+            @endforeach
+
         </div>
     </div>
 </section>

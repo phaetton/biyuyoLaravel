@@ -49,4 +49,7 @@ class negocios extends Model
         return $this->BelongsTo(User::class);
     }
     
+    public function imagenes(){
+        return $this->hasMany(imagenes::class);
+    }
 }

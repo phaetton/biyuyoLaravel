@@ -19,7 +19,7 @@
 
 
                         <a href="{{ route('categoria',$pcategoria['slug']) }}" class="relative flex items-end w-full bg-black h-96 group">
-                                <img alt="Modded Bike" src="images/categorias/{{$pcategoria['imagen']}}" class="absolute inset-0 object-cover w-full h-full transition-opacity group-hover:opacity-90" />
+                                <img alt="Modded Bike" src="@if (true ) {{$pcategoria['imagen']}} @else images/categorias/{{$pcategoria['imagen']}} @endif" class="absolute inset-0 object-cover w-full h-full transition-opacity group-hover:opacity-90" />
 
                                 <div class="relative w-full p-6 tracking-widest text-center text-white bg-gray-700 transition-colors sm:w-2/3 group-hover:bg-black">
                                        

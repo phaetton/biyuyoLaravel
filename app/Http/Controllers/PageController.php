@@ -62,7 +62,11 @@ class PageController extends Controller
     public function negocio(negocios $pnegocio)
     {
         $search = $pnegocio->id;
-        $pimagenes = imagenes::latest()->paginate(16);
+        $pimagenes = imagenes::where('negocio_id', 'LIKE', "%{$search}%")
+            ->with('user')
+            ->latest()->paginate(15);
+
+            
 
         return view('negocio', [
             'pnegocio' => $pnegocio,
