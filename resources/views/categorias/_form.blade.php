@@ -17,6 +17,7 @@
       </label>
       <input name="imagen" value="{{old ('imagen',$categoria->imagen)}}" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="file" accept="image/*" placeholder="imagen">
       
+
     </div>
   </div>
 

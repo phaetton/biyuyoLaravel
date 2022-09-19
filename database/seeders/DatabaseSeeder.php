@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         // cantidad de elementos falsos a crearse según el modelo
          \App\Models\User::factory()->create();
-         \App\Models\Categorias::factory(40)->create();
-         \App\Models\clientes::factory(50)->create();
-         \App\Models\tiponegocios::factory(10)->create();
-         \App\Models\negocios::factory(300)->create();
-         \App\Models\imagenes::factory(300)->create();
+        //  \App\Models\Categorias::factory(40)->create();
+        //  \App\Models\clientes::factory(50)->create();
+        //  \App\Models\tiponegocios::factory(10)->create();
+        //  \App\Models\negocios::factory(300)->create();
+        //  \App\Models\imagenes::factory(300)->create();
 
 
         // \App\Models\User::factory()->create([

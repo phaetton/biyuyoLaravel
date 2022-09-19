@@ -113,7 +113,7 @@
                 </div>
 
             </div>
-            <img class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="@if (true) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif">
+            <img class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="@if (false) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif">
         </div>
     </div>
 </section>
@@ -124,7 +124,7 @@
             @foreach($pimagenes as $pimagen)
             <div class="relative block bg-white ">
 
-                <img loading="lazy" alt="Build Your Own Drone" class="object-contain w-full h-56 lg:h-72" src="@if (true) {{$pimagen->imagen}} @else ../images/negocios/{{$pimagen->imagen}} @endif" />
+                <img loading="lazy" alt="Build Your Own Drone" class="object-contain w-full h-56 lg:h-72" src="@if (false) {{$pimagen->imagen}} @else ../images/imagenes/{{$pimagen->imagen}} @endif" />
 
                 <div class="p-6">
                     <span class="inline-block px-3 py-1 text-xs font-medium bg-yellow-500">

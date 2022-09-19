@@ -35,8 +35,7 @@ class NegociosController extends Controller
             'negocios.create',
             ['negocio' => $negocio],
             with(compact(
-                '
-         categorias',
+                'categorias',
                 'tiponegocios',
                 'clientes'
             ))
