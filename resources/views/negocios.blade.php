@@ -12,29 +12,38 @@
                 <ul class="swiper-wrapper">
                     @foreach($pnegocios as $pnegocio)
                     <li class="swiper-slide">
-            <a href="{{ route('negocio',$pnegocio['slug']) }}" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 w-full">
-                <img alt="{{$pnegocio->nombre}}" src="@if (false) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif" class="object-cover w-full h-56 rounded-md" />
-
-                <div class="mt-2">
-                    <div class="flex w-full  text-gray-800 text-xs">
-                        <div class="col-span-2 md:col-span-1 flex ">
-                            <div class="w-full">
-                                <h2 class="text-gray-500">Tipo</h2>
-                                <p>{{$pnegocio->tiponegocio->nombre}}</p>
+                        <a href="{{ route('negocio',$pnegocio['slug']) }}" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 w-full">
+                            <img alt="{{$pnegocio->nombre}}" src="@if (false) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif" class="object-cover w-full h-56 rounded-md" />
+                            <div class="absolute top-0 right-0 w-16 h-16">
+                                <img class="rounded-full border border-gray-100 shadow-sm" src="../images/logos/{{$pnegocio->logo}}" alt="user image" />
                             </div>
-                            <div class="w-full">
-                                <h2 class="text-gray-500">Categoria</h2>
-                                <p> {{$pnegocio->categoria->nombre}}</p>
-                            </div>
-                        </div>
-                       
-                    </div>
+                            <div class="mt-2">
+                                <div class="flex w-full  text-gray-800 text-xs">
+                                    <div class="col-span-2 md:col-span-1 flex ">
+                                        <div class="w-full">
+                                            <h2 class="text-gray-500">Tipo</h2>
+                                            <p>{{$pnegocio->tiponegocio->nombre}}</p>
+                                        </div>
+                                        <div class="w-full">
+                                            <h2 class="text-gray-500">Categoria</h2>
+                                            <p> {{$pnegocio->categoria->nombre}}</p>
+                                        </div>
+                                    </div>
 
-                    </dl>
-                </div>
-            </a>
-        </li>
-        @endforeach
+                                </div>
+
+                                </dl>
+                            </div>
+
+
+
+
+
+
+
+                        </a>
+                    </li>
+                    @endforeach
 
                 </ul>
 
@@ -81,34 +90,35 @@
         </div>
 
         <div class="grid xs:grid-cols-1  md:grid-cols-2  gap-4">
+
             @foreach($pnegocios as $pnegocio)
-            <a href="{{ route('negocio',$pnegocio['slug']) }}" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 w-full">
-                <img alt="{{$pnegocio->nombre}}" src="@if(false) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif" class="object-cover w-full h-56 rounded-md" />
 
-                <div class="mt-2">
-                    <div class="grid grid-cols-2  text-gray-800 text-xs">
-                        <div class="col-span-2 md:col-span-1 flex space-x-3">
-                            <div class="w-1/2">
-                                <h2 class="text-gray-500">Tipo</h2>
-                                <p>{{$pnegocio->tiponegocio->nombre}}</p>
+            <div class="swiper-slide">
+                <a href="{{ route('negocio',$pnegocio['slug']) }}" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 w-full">
+                    <img alt="{{$pnegocio->nombre}}" src="@if (false) {{$pnegocio->imagen}} @else ../images/negocios/{{$pnegocio->imagen}} @endif" class="object-cover w-full h-56 rounded-md" />
+                    <div class="absolute top-0 right-0 w-20 h-20">
+                        <img class="rounded-full border border-gray-100 shadow-sm " src="../images/logos/{{$pnegocio->logo}}" alt="user image" />
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex w-full  text-gray-800 text-xs">
+                            <div class="col-span-2 md:col-span-1 flex ">
+                                <div class="w-full">
+                                    <h2 class="text-gray-500">Tipo</h2>
+                                    <p>{{$pnegocio->tiponegocio->nombre}}</p>
+                                </div>
+                                <div class="w-full">
+                                    <h2 class="text-gray-500">Categoria</h2>
+                                    <p> {{$pnegocio->categoria->nombre}}</p>
+                                </div>
                             </div>
-                            <div class="w-1/2">
-                                <h2 class="text-gray-500">Categoria</h2>
-                                <p> {{$pnegocio->categoria->nombre}}</p>
-                            </div>
-                        </div>
-                        <div class="col-span-2 md:col-span-1 flex space-x-3">
 
-                            <!-- <div>
-                                <h2 class="text-gray-500">Dueño</h2>
-                                <p>{{$pnegocio->cliente->nombre}}</p>
-                            </div> -->
                         </div>
+
+                        </dl>
                     </div>
 
-                    </dl>
-                </div>
-            </a>
+                </a>
+            </div>
             @endforeach
         </div>
         {{$pnegocios->links()}}

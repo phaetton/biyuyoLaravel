@@ -1,5 +1,4 @@
 @csrf
-@csrf
 <!-- component -->
 <div class=" rounded  pt-6   flex flex-col ">
   <div class="-mx-3 md:flex mb-6 justify-between">
