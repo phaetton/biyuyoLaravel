@@ -21,11 +21,11 @@
                     </x-nav-link>
 
                     <x-nav-link :href="route('categorias')" :active="request()->routeIs('categorias')">
-                        {{ __('categorias') }}
+                        {{ __('Categorías') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('tiponegocios')" :active="request()->routeIs('tiponegocios')">
-                        {{ __('Tipos de negocios') }}
+                        {{ __('Tipos de Negocios') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('clientes')" :active="request()->routeIs('clientes')">

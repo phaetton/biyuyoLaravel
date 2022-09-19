@@ -79,9 +79,9 @@ class CategoriasController extends Controller
 
         $categoria->update([
             'imagen'            =>  $filename,
-            'nombre' => $nombre = $request->nombre,
-            'slug' => Str::slug($nombre),
-            'descripcion' => $request->descripcion
+            'nombre'            => $nombre = $request->nombre,
+            'slug'              => Str::slug($nombre),
+            'descripcion'       => $request->descripcion
         ]);
 
         return redirect()->route('categorias.edit', $categoria);
