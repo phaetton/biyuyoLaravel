@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight flex items-center justify-between">
-            {{ __('Listado de Categorias') }}
+        <h2 class="font-semibold text-lg  leading-tight flex items-center justify-between">
+            {{ __('Listado de Categorías') }}
             <a href="{{ route('categorias.create') }}" class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-900 font-bold  shadow-lg shadow-gray-200 transition ease-in-out duration-200 translate-10">Crear</a>
 
         </h2>
@@ -30,23 +30,23 @@
                     </h2>
 
                     <div class=" flex gap-2">
-                    <a href="{{ route('categorias.edit',$categoria) }}" class="w-full">
-                        <button class="text-sm  rounded-md w-full mt-4 px-4 py-2  text-white bg-green-800 hover:bg-green-900 font-bold">
-                            Editar
-                        </button>
+                        <a href="{{ route('categorias.edit',$categoria) }}" class="w-full">
+                            <button class="text-sm  rounded-md w-full mt-4 px-4 py-2  text-white bg-green-800 hover:bg-green-900 font-bold">
+                                Editar
+                            </button>
 
-                    </a>
+                        </a>
 
-                    <form action="{{route('categorias.destroy',$categoria)}}" method="POST" class="w-full">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class=" text-sm  rounded-md w-full mt-4 px-4 py-2  text-white bg-gray-800 hover:bg-gray-900 font-bold " />
-                    </form>
+                        <form action="{{route('categorias.destroy',$categoria)}}" method="POST" class="w-full">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar?')" class=" text-sm  rounded-md w-full mt-4 px-4 py-2  text-white bg-gray-800 hover:bg-gray-900 font-bold " />
+                        </form>
                     </div>
                 </div>
                 @empty
-                <div class="border-b border-gray-200 text-sm">
-                    Upps! no hay ninguna publicacion disponible
+                <div class="border-b border-gray-200 dark:border-gray-700 text-sm dark:text-white">
+                    Upps! no hay ninguna categoría disponible
                 </div>
                 @endforelse
 

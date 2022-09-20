@@ -12,8 +12,7 @@
 
     <div class="py-4">
         <div class=" container mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6  border-b border-gray-200">
+            <div class=" shadow-sm sm:rounded-lg">
                     <div class="grid grid-cols-4 -m-1 md:-m-2 gap-2">
                         @forelse ($imagenes as $imagen)
 
@@ -43,30 +42,13 @@
                             </div>
                         </a>
 
-
-                        <!-- <div class="flex flex-wrap w-1/3">
-                                    <div class="w-full p-1 md:p-2">
-                                        <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="@if(isset($imagen->imagen)) images/imagenes/{{$imagen->imagen}} @else images/user_placeholder.png @endif">
-                                    </div>
-                                   
-                                </div> -->
-
-
-
-
-
-
-
-
-
-
-
                         @empty
-                        Upps! no hay ninguna publicacion disponible
+                        <div class="border-b border-gray-200 dark:border-gray-700 text-sm dark:text-white">
+                            Upps! no hay ninguna imagen disponible
+                        </div>
                         @endforelse
                     </div>
                     {{$imagenes->links()}}
                 </div>
-            </div>
         </div>
 </x-app-layout>

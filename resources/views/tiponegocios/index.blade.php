@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 @empty
-                <div class="border-b border-gray-200 text-sm">
-                    Upps! no hay ninguna publicacion disponible
+                <div class="border-b border-gray-200 dark:border-gray-700 text-sm dark:text-white">
+                    Upps! no hay ningún tipo de negocio disponible
                 </div>
                 @endforelse
 
