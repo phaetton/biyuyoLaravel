@@ -12,7 +12,7 @@
                 <div class="grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-6 lg:gap-8  items-center">
                     <a href="{{ route('categorias') }}">
                         <div class="relative flex flex-col">
-                            <img src="{{asset('../images/iconodash/categorias.jpg')}}" alt="two girls" class="w-full h-full" />
+                            <img src="{{asset('/images/iconodash/categorias.jpg')}}" alt="two girls" class="w-full h-full" />
                             <img src="https://i.ibb.co/Tb5CKHn/Rectangle-49.png" alt="opacity bg" class="absolute w-full h-full top-0" />
                             <div class="absolute m-6 bottom-0 z-30">
                                 <p class="text-sm leading-none text-white">Colección de</p>
@@ -23,7 +23,7 @@
                     </a>
                     <a href="{{ route('tiponegocios') }}">
                         <div class="relative flex flex-col">
-                            <img src="{{asset('../images/iconodash/tiponegocios.jpg')}}" alt="black guy" class="w-full" />
+                            <img src="{{asset('/images/iconodash/tiponegocios.jpg')}}" alt="black guy" class="w-full" />
                             <img src="https://i.ibb.co/Tb5CKHn/Rectangle-49.png" alt="opacity bg" class="absolute w-full top-0" />
                             <div class="absolute m-6 bottom-0 z-30">
                                 <p class="text-sm leading-none text-white">Colección de</p>
@@ -34,7 +34,7 @@
                     </a>
                     <a href="{{ route('clientes') }}">
                         <div class="relative flex flex-col">
-                            <img src="{{asset('../images/iconodash/clientes.jpg')}}" alt="black guy" class="w-full h-full" />
+                            <img src="{{asset('/images/iconodash/clientes.jpg')}}" alt="black guy" class="w-full h-full" />
                             <img src="https://i.ibb.co/Tb5CKHn/Rectangle-49.png" alt="opacity bg" class="absolute w-full h-full top-0" />
                             <div class="absolute m-6 bottom-0 z-30">
                                 <p class="text-sm leading-none text-white">Colección de</p>
@@ -46,7 +46,7 @@
 
                     <a href="{{ route('negocios') }}">
                         <div class="relative flex flex-col">
-                            <img src="{{asset('../images/iconodash/negocios.jpg')}}" alt="black guy" class="w-full h-full" />
+                            <img src="{{asset('/images/iconodash/negocios.jpg')}}" alt="black guy" class="w-full h-full" />
                             <img src="https://i.ibb.co/Tb5CKHn/Rectangle-49.png" alt="opacity bg" class="absolute w-full h-full top-0" />
                             <div class="absolute m-6 bottom-0 z-30">
                                 <p class="text-sm leading-none text-white">Colección de</p>

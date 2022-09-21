@@ -7,7 +7,7 @@
                 Nombre
             </label>
             <input value="{{ old('nombre', $categoria->nombre) }}" name="nombre" 
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" type="text" placeholder="Nombre" >
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 dark:bg-gray-900 text-white" type="text" placeholder="Nombre" >
             <p class="text-red-600 text-xs italic">@error ('nombre') {{$message}} @enderror</p>
         </div>
       
@@ -27,7 +27,7 @@
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
                 Descripción
             </label>
-            <textarea name="descripcion" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{ old('descripcion', $categoria->descripcion) }}</textarea>
+            <textarea name="descripcion" class="dark:bg-gray-900 text-white appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" cols="10">{{ old('descripcion', $categoria->descripcion) }}</textarea>
             <p class="text-red-600 text-xs italic">@error ('descripcion') {{$message}} @enderror</p>
 
         </div>
